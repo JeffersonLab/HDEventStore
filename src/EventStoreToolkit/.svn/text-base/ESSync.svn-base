@@ -1,7 +1,0 @@
-#!/usr/bin/env bash
-
-# setup environment
-#. `dirname $0`/setup.sh
-
-# run actual script
-`dirname $0`/syncToMaster.py $*
