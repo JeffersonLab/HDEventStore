@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>pds_dump.PDSFileReader</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css"></link>
+</head>
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+
+<!-- =========== START OF NAVBAR =========== -->
+<table class="navbar" border="0" width="100%" cellpadding="0" bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="center">
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="trees.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="indices.html">Index</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar" align="right" width="100%">
+      <table border="0" cellpadding="0" cellspacing="0">
+      <tr><th class="navbar" align="center">
+        <p class="nomargin">
+          EventStoreToolkit&nbsp;API
+      </p></th></tr></table>
+    </th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <font size="-1"><b class="breadcrumbs">
+        <a href="pds_dump-module.html">Module&nbsp;pds_dump</a> ::
+        Class&nbsp;PDSFileReader
+      </b></font></br>
+    </td>
+    <td><table cellpadding="0" cellspacing="0">
+      <tr><td align="right"><font size="-2">[show&nbsp;private&nbsp;|&nbsp;<a href="../public/pds_dump.PDSFileReader-class.html">hide&nbsp;private</a>]</font></td></tr>
+      <tr><td align="right"><font size="-2">[<a href="frames.html"target="_top">frames</a>&nbsp;|&nbsp;<a href="pds_dump.PDSFileReader-class.html" target="_top">no&nbsp;frames</a>]</font></td></tr>
+    </table></td>
+</tr></table>
+
+<!-- =========== START OF CLASS DESCRIPTION =========== -->
+<h2 class="class">Class PDSFileReader</h2>
+
+<hr/>
+
+Base class to read PDS file
+<hr/>
+
+
+<!-- =========== START OF METHOD SUMMARY =========== -->
+<table class="summary" border="1" cellpadding="3" cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="summary">
+  <th colspan="2">Method Summary</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><a name="__init__"></a><span class="summary-sig"><span class="summary-sig-name">__init__</span>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>fileName</span>)</span></code>
+</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">        none
+</font></td>
+  <td><code><span class="summary-sig"><a href="pds_dump.PDSFileReader-class.html#backToFirstRecord" class="summary-sig-name"><code>backToFirstRecord</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+PDS file descriptor of the first record in a file.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="pds_dump.PDSFileReader-class.html#dataInStreams" class="summary-sig-name"><code>dataInStreams</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Return a dictionary of stream:data</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">        file descriptor return: pds file descriptor
+</font></td>
+  <td><code><span class="summary-sig"><a href="pds_dump.PDSFileReader-class.html#fileDesc" class="summary-sig-name"><code>fileDesc</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+PDS file descriptor.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="pds_dump.PDSFileReader-class.html#needToSwap" class="summary-sig-name"><code>needToSwap</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Return a flag if we pds file was produced on another endian node</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="pds_dump.PDSFileReader-class.html#newOldIndecies" class="summary-sig-name"><code>newOldIndecies</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Build conversion from new stream index to old index</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="pds_dump.PDSFileReader-class.html#readLastRecordInfo" class="summary-sig-name"><code>readLastRecordInfo</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Return last record in pds file.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="pds_dump.PDSFileReader-class.html#readRecord" class="summary-sig-name"><code>readRecord</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Read one record in pds file, we use <a 
+href="pds_dump-module.html#readPDSRecord" 
+class="link"><code>readPDSRecord</code></a> method</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="pds_dump.PDSFileReader-class.html#readRecordInfo" class="summary-sig-name"><code>readRecordInfo</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Return current record information, we use <a 
+href="pds_dump-module.html#getPDSRecordInfo" 
+class="link"><code>getPDSRecordInfo</code></a> method</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">        none
+</font></td>
+  <td><code><span class="summary-sig"><a href="pds_dump.PDSFileReader-class.html#setPosition" class="summary-sig-name"><code>setPosition</code></a>(<span class=summary-sig-arg>self</span>,
+          <span class=summary-sig-arg>pos</span>)</span></code>
+<br />
+Set position of pds file descriptor.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="pds_dump.PDSFileReader-class.html#streamNames" class="summary-sig-name"><code>streamNames</code></a>(<span class=summary-sig-arg>self</span>)</span></code>
+<br />
+Return stream names</td></tr>
+</table><br />
+
+
+<!-- =========== START OF METHOD DETAILS =========== -->
+<table class="details" border="1" cellpadding="3" cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="details">
+  <th colspan="2">Method Details</th></tr>
+</table>
+
+<a name="backToFirstRecord"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">backToFirstRecord</span>(<span class=sig-arg>self</span>)</span>
+  </h3>
+  PDS file descriptor of the first record in a file.
+  <dl><dt></dt><dd>
+    <dl><dt><b>Returns:</b></dt>
+      <dd>
+        seek to the first record in a file
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=none)</i>
+      </dd>
+    </dl>
+  </dd></dl>
+</td></tr></table>
+
+<a name="dataInStreams"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">dataInStreams</span>(<span class=sig-arg>self</span>)</span>
+  </h3>
+  Return a dictionary of stream:data
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="fileDesc"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">fileDesc</span>(<span class=sig-arg>self</span>)</span>
+  </h3>
+  PDS file descriptor.
+  <dl><dt></dt><dd>
+    <dl><dt><b>Returns:</b></dt>
+      <dd>
+        file descriptor return: pds file descriptor
+      </dd>
+    </dl>
+  </dd></dl>
+</td></tr></table>
+
+<a name="needToSwap"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">needToSwap</span>(<span class=sig-arg>self</span>)</span>
+  </h3>
+  Return a flag if we pds file was produced on another endian node
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="newOldIndecies"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">newOldIndecies</span>(<span class=sig-arg>self</span>)</span>
+  </h3>
+  Build conversion from new stream index to old index
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="readLastRecordInfo"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">readLastRecordInfo</span>(<span class=sig-arg>self</span>)</span>
+  </h3>
+  Return last record in pds file. Record info is retrieved by <a 
+  href="pds_dump-module.html#getPDSRecordInfo" 
+  class="link"><code>getPDSRecordInfo</code></a> method
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="readRecord"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">readRecord</span>(<span class=sig-arg>self</span>)</span>
+  </h3>
+  Read one record in pds file, we use <a 
+  href="pds_dump-module.html#readPDSRecord" 
+  class="link"><code>readPDSRecord</code></a> method
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="readRecordInfo"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">readRecordInfo</span>(<span class=sig-arg>self</span>)</span>
+  </h3>
+  Return current record information, we use <a 
+  href="pds_dump-module.html#getPDSRecordInfo" 
+  class="link"><code>getPDSRecordInfo</code></a> method
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="setPosition"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">setPosition</span>(<span class=sig-arg>self</span>,
+          <span class=sig-arg>pos</span>)</span>
+  </h3>
+  Set position of pds file descriptor.
+  <dl><dt></dt><dd>
+    <dl><dt><b>Parameters:</b></dt>
+      <dd><code><b>pos</b></code> -
+         position of the file
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=integer)</i>
+      </dd>
+    </dl>
+    <dl><dt><b>Returns:</b></dt>
+      <dd>
+        seek to provided position in a file
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=none)</i>
+      </dd>
+    </dl>
+  </dd></dl>
+</td></tr></table>
+
+<a name="streamNames"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">streamNames</span>(<span class=sig-arg>self</span>)</span>
+  </h3>
+  Return stream names
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+<br />
+
+
+<!-- =========== START OF NAVBAR =========== -->
+<table class="navbar" border="0" width="100%" cellpadding="0" bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="center">
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="trees.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="indices.html">Index</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar" align="right" width="100%">
+      <table border="0" cellpadding="0" cellspacing="0">
+      <tr><th class="navbar" align="center">
+        <p class="nomargin">
+          EventStoreToolkit&nbsp;API
+      </p></th></tr></table>
+    </th>
+  </tr>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td align="left"><font size="-2">Generated by Epydoc 2.1 on Tue Jan 24 10:46:01 2006</font></td>
+    <td align="right"><a href="http://epydoc.sourceforge.net"
+                      ><font size="-2">http://epydoc.sf.net</font></a></td>
+  </tr>
+</table>
+</body>
+</html>

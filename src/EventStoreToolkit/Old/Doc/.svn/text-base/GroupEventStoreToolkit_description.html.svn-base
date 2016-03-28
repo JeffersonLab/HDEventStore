@@ -1,0 +1,252 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta content="text/html; charset=ISO-8859-1"
+ http-equiv="content-type">
+  <title>GroupEventStoreToolkit description</title>
+</head>
+<body>
+<h3><big style="font-weight: bold;">GroupEventStoreToolkit description</big></h3>
+GroupEventStoreToolkit is a set of python modules and scripts
+grouped together in a single package. It's a prototype of administrative
+tools necessary to manage EventStore. Currently is uses three 3d party
+python modules: MySQLdb, sqlitem bsddb3 (for Berkeley DB support).
+The BerkeleyDB support is abandoned in favor of SQLite.
+<h4>GroupEventStoreToolkit API</h4>
+The GroupEventStoreToolkit consists from the following modules:<br>
+<font color="#3333ff">
+ESBuilder.py<br>
+ESDump.py<br>
+fileContent.py<br>
+ESManager.py<br>
+sql_util.py<br>
+convert.py<br>
+file_util.py<br><br>
+cgiDBAccess.py<br>
+cgiDumpFileContent.py<br>
+cgiEventStoreUtils.py<br><br>
+</font>
+binary_dump.py<br>
+binary_reader.py<br>
+binary_utils.py<br>
+build_binary_location.py<br>
+build_key_from_binary.py<br>
+build_key_from_pds.py<br>
+build_key.py<br>
+build_pds_location.py<br>
+key_dump.py<br>
+lbin_dump.py<br>
+lpds_dump.py<br>
+pds_dump.py<br>
+pds_reader.py<br>
+pds_utils.py<br>
+<br>
+Here we will discuss high-level API highlighed in blue color.
+The low-level modules are format dependent file utilities with
+self-exaplaining names.<br>
+<br>
+The <span style="color: rgb(51, 51, 255);">ESManager.py</span> python
+module consists of a single class <span
+ style="color: rgb(153, 51, 153);">ESManager</span>.
+It should be initialized with the following set of parameters:<br>
+<pre>
+- data base connector
+  no default 
+- location of output key/location files
+  default: location of input data files
+- specific version name
+  default is composed as:
+  nodename_sysname_OSrelease_machineName_date_localtime
+- administrative version (or grade)
+  default: physics
+- time stamp
+  default: 0
+- view
+  default: all
+- flag to generate key files
+  default: yes
+- verbose flag
+  default: quiet
+- flag indicating which DB to use.
+  This flag is necessary since SQL-syntax is slightly
+  different for MySQL and SQLite.
+  default: use MySQL
+</pre>
+The <span style="color: rgb(153, 51, 153);">ESManager</span> class has
+two high-level API methods:<br>
+<br>
+<b>int updateDB(genMode, fileList):</b><br>
+genMode informs if key file generation is enabled
+fileList is a list of files to be added to DB
+Returns status upon completion. Failure status allow parent code to
+perform necessary actions, such as rollback transaction.
+It uses the following low-level API methods:<br><br>
+<b>int updateXXXXDB(args):</b><br>
+update methods for XXXX DB table, e.g. LocationDB. The args is a set
+of arguments which form this table
+<br><br>
+<b>int updateDBUsingGroupList(groupList):</b><br>
+<b>int updateDBUsingFileList(generationMode, fileList):</b><br>
+<b>int updateDBWithoutKeyFile(fileName):</b><br>
+<b>int updateDBFromIDXA(fileName): </b><br>
+run-condition update methods<br>
+<br>
+<b>int moveFilesInES(fileIn,fileOut):</b><br>
+fileIn could be a single file or directory name. In last case
+all files from that directory are considered to be moved in EventStore.
+fileOut either file or directory name. The following logic has been
+applied: check if fileIn exists in DB, check permission for fileOut
+to be written, perform DB update, move files. Returns status
+upon completion. The status information can be used by main applications
+to monitor this transaction and invoke necessary actions.<br>
+<br>
+<b>int deleteGrade(delVer,delTime):</b><br>
+deleteGrade is used to remove data from EventStoreDB.
+The process identifies valid data/key/location files for
+removal. Key/location files are removed from ESDB and
+associative data files are marked as orhpans in OrphanFileIDDB.
+<br><br>
+The <span style="color: rgb(51, 51, 255);">sql_util.py</span> module (<span
+ style="color: rgb(153, 51, 153);">SQLUtil</span> class) provides
+high-level routines to manipulate EventStore DB tables. 
+It should be initialized by
+<pre>
+- db cursor
+- db type
+- verbose flag
+</pre>
+
+It has the following API:<br>
+<b>list dbNames():</b><br>
+return names of EventStore DB tables<br>
+<br>
+<b>list dbContent():</b><br>
+return a list of table fields in EventStoreDB<br>
+<br>
+<b>void dropTable():</b><br>
+drop table from EventStoreDB<br>
+<br>
+<b>void createTables():</b><br>
+create all EventStore DB tables<br>
+<br>
+<b>void printDBContent(table):</b><br>
+print the content of given table<br>
+<br>
+Main applications (command-line tools):<br><br>
+The <span style="color: rgb(51, 51, 255);">ESBuilder.py</span> is in
+charge of collecting input information from users, 
+keeping log of users actions with EventStoreDB and transaction log 
+(need to be implemented). It uses MySQL or SQLite transactions for
+all actions.
+<br><br>
+The <span style="color: rgb(51, 51, 255);">ESDump.py</span> provides
+information about EventStore DB tables.
+<br><br>
+The <span style="color: rgb(51, 51, 255);">fileContent.py</span>
+prints content of supporting file formats (pds, binary, key,
+pds location, binary location). The details of output can be controlled
+by verbose option.
+<br><br>
+The <span style="color: rgb(51, 51, 255);">convert.py</span> converts
+one DB to another (MySQL&lt;-&gt;SQLite)
+<br><br>
+The <span style="color: rgb(51, 51, 255);">file_util.py </span>
+provides high-level format independent
+API to parse and
+build data and key/location files. It consists from the following
+methods:
+<br><br>
+<b>list fileParser(fileName,what=""):</b><br>
+parse input file with optional parameter
+what=(run,uid,syncValue,proxies). Return a combined list of
+fields.
+<br><br>
+<b>void build_key(fileIn,fileOut,oFileID):</b><br>
+build key file for given data file and its file ID. Output file
+written to fileOut.
+<br><br>
+<b>void
+build_location(fileIn,fileID,fileOut,tagList=[]):</b><br>
+build location file for given data file, its file id and tagList
+which vetoes events. Output file written to fileOut.
+<br><br>
+<b>string fileType(fileName):</b><br>
+return file type (pds, bin, key, lpds, lbin).
+
+<h4>USE CASES:</h4>
+Right now toolkit is capable of doing the following tasks:
+<pre>
+- create a new EventStore
+- add file and/or set of files to DB based on path/fileName/pattern
+- create key and location files for PDS and binary file data formats
+- add data from event list based on input IDXA file
+- move file inside EventStore 
+- delete grade from EventStore
+- performs necessary updates in EventStore tables
+- physically move file
+- keeps history of user commands
+- print content of underlying DB tables
+- print content data/key/location files
+- the following formats are supported: 
+  PDS, binary, key, PDS location, binary location
+- convert BerkeleyDB<->MySQL<->SQLite
+</pre>
+
+It also has the following features:
+<pre>
+- transaction log
+- history log, to keep history of users requests
+</pre>
+
+<h4>Web interface</h4>
+The web interface is written in python as CGI module. It consists of
+the following modules:<br>
+<span style="color: rgb(51, 51, 255);">
+cgiDBAccess.py<br>
+cgiDumpFileContent.py<br>
+cgiEventStoreUtils.py<br>
+</span>
+<br>
+The <span style="color: rgb(51, 51, 255);">cgiDBAccess.py</span> 
+module provides the web form interface with
+<span style="font-style: italic; color: rgb(0, 153, 0);">
+Information/Administration/Expert</span>
+pages to perform various tasks.
+<br><br>
+<span style="color: rgb(0, 153, 0); font-style: italic;">Information
+page</span> 
+performs the following queries:
+<pre>
+- Number of events for give grade/view/runRange
+- List of data (proxies) stored for date/grade
+- Version details for date/grade/view/run
+- Comparison of two date stamps; For each date it summarize
+  runRange, number of events, specific version, difference in
+  runRange and data
+</pre>
+
+<span style="color: rgb(0, 153, 0); font-style: italic;">
+Administrative page</span> 
+generates set of arguments for command-line tool
+and performs administrative tasks with EventStore DB.
+<br><br>
+<span style="font-style: italic; color: rgb(0, 153, 0);">Expert page</span>
+allows to look at table contents, location of files, form
+event list for given grade/view/run.
+<br><br>
+Below you can find links to EventStore web interface and user
+documentation:<br>
+<a href="http://mq107.lns.cornell.edu/cgi-bin/EventStore/cgiDBAccess.py">Web
+interface</a> <br>
+<a href="http://www.lns.cornell.edu/%7Evk/EventStore/GroupEventStoreToolkit.html">User
+documentation</a><br>
+<br>
+<hr style="width: 100%; height: 2px;">
+<div align="right">
+<small><small><small><small>Last
+revised: Fri Jul 16 10:17:13 EDT 2004<br>
+Maintainer: <a href="mailto:vk@mail.lns.cornell.edu">Valentin Kuznetsov</a>
+</small></small></small></small>
+</div>
+</body>
+</html>

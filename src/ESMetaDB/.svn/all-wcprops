@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/repos/!svn/ver/16955/trunk/home/sdobbs/EventStore/src/ESMetaDB
+END
+schema.png
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/repos/!svn/ver/16955/trunk/home/sdobbs/EventStore/src/ESMetaDB/schema.png
+END
+DBParam
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/repos/!svn/ver/16955/trunk/home/sdobbs/EventStore/src/ESMetaDB/DBParam
+END
+ESMetaDataServer.py
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/repos/!svn/ver/16955/trunk/home/sdobbs/EventStore/src/ESMetaDB/ESMetaDataServer.py
+END
+test_client.sh
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/repos/!svn/ver/16955/trunk/home/sdobbs/EventStore/src/ESMetaDB/test_client.sh
+END
+setup.sh
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/repos/!svn/ver/16955/trunk/home/sdobbs/EventStore/src/ESMetaDB/setup.sh
+END
+soap.py
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/repos/!svn/ver/16955/trunk/home/sdobbs/EventStore/src/ESMetaDB/soap.py
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/repos/!svn/ver/16955/trunk/home/sdobbs/EventStore/src/ESMetaDB/README
+END
+es_mds_init
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/repos/!svn/ver/16955/trunk/home/sdobbs/EventStore/src/ESMetaDB/es_mds_init
+END

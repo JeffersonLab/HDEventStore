@@ -1,0 +1,358 @@
+/****** Object:  Table Detector_Configuration    Script Date: 12/15/2008 5:36:24 PM ******/
+CREATE TABLE Detector_Configuration (
+	detector_config_id varchar (50)  NOT NULL ,
+	component varchar (50)  NOT NULL ,
+	present bit NOT NULL 
+) ENGINE = InnoDB;
+
+
+/****** Object:  Table Energy_Class    Script Date: 12/15/2008 5:36:24 PM ******/
+CREATE TABLE Energy_Class (
+	energy_range_name varchar (50)  NOT NULL ,
+	min_beam_energy float NULL ,
+	max_beam_energy float NULL 
+) ENGINE = InnoDB;
+
+
+/****** Object:  Table Package_Versions    Script Date: 12/15/2008 5:36:24 PM ******/
+CREATE TABLE Package_Versions (
+	package_version_id varchar (50)  NOT NULL ,
+	package_name varchar (50)  NOT NULL ,
+	package_cvs_tag varchar (50)  NULL 
+) ENGINE = InnoDB;
+
+
+/****** Object:  Table Processing_Change    Script Date: 12/15/2008 5:36:24 PM ******/
+CREATE TABLE Processing_Change (
+	processing_change_id varchar (50)  NOT NULL ,
+	processing_change_type varchar (50)  NULL ,
+	processing_change_description varchar (50)  NULL ,
+	processing_change_date datetime NULL 
+) ENGINE = InnoDB;
+
+
+/****** Object:  Table Raw_Run_Properties    Script Date: 12/15/2008 5:36:24 PM ******/
+CREATE TABLE Raw_Run_Properties (
+	run_number int NOT NULL ,
+	start_time datetime NULL ,
+	event_count int NULL ,
+	last_event_number int NULL ,
+	luminosity float NULL ,
+	beam_energy float NULL ,
+	magnetic_field float NULL ,
+	run_type varchar (50)  NULL ,
+	runmanager_approved tinyint NULL ,
+	termination_status varchar (50)  NULL ,
+	trigger_config binary (50) NULL 
+) ENGINE = InnoDB;
+
+
+/****** Object:  Table Calibrated_Scalers    Script Date: 12/15/2008 5:36:24 PM ******/
+CREATE TABLE Calibrated_Scalers (
+	type varchar (50)  NOT NULL ,
+	run_number int NOT NULL ,
+	created datetime NOT NULL ,
+	value float NULL 
+) ENGINE = InnoDB;
+
+
+/****** Object:  Table Dataset    Script Date: 12/15/2008 5:36:24 PM ******/
+CREATE TABLE Dataset (
+	dataset_name varchar (50)  NOT NULL ,
+	first_run_number int NOT NULL ,
+	last_run_number int NOT NULL 
+) ENGINE = InnoDB;
+
+
+/****** Object:  Table Raw_Run_Detector_Configuration    Script Date: 12/15/2008 5:36:24 PM ******/
+CREATE TABLE Raw_Run_Detector_Configuration (
+	run_number int NOT NULL ,
+	detector_config_id varchar (50)  NOT NULL ,
+	component varchar (50)  NOT NULL 
+) ENGINE = InnoDB;
+
+
+/****** Object:  Table Repaired_Run_Properties    Script Date: 12/15/2008 5:36:24 PM ******/
+CREATE TABLE Repaired_Run_Properties (
+	run_number int NOT NULL ,
+	modification_time datetime NOT NULL ,
+	event_count int NULL ,
+	last_event_number int NULL 
+) ENGINE = InnoDB;
+
+
+/****** Object:  Table Software_Versions    Script Date: 12/15/2008 5:36:25 PM ******/
+CREATE TABLE Software_Versions (
+	software_version_id varchar (50)  NOT NULL ,
+	code_release varchar (50)  NULL ,
+	package_version_id varchar (50)  NULL ,
+	package_name varchar (50)  NULL ,
+	package_change_date datetime NULL 
+) ENGINE = InnoDB;
+
+
+/****** Object:  Table Provenance_Group    Script Date: 12/15/2008 5:36:25 PM ******/
+CREATE TABLE Provenance_Group (
+	provenance_group_id varchar (50)  NOT NULL ,
+	software_version_id varchar (50)  NULL ,
+	constants_tag varchar (50)  NULL ,
+	processing_change_id varchar (50)  NULL 
+) ENGINE = InnoDB;
+
+
+/****** Object:  Table Reconstructed_Run_Properties    Script Date: 12/15/2008 5:36:25 PM ******/
+CREATE TABLE Reconstructed_Run_Properties (
+	run_number int NOT NULL ,
+	provenance_group_id varchar (50)  NOT NULL ,
+	events_written int NULL ,
+	start_time datetime NULL ,
+	finish_time datetime NULL 
+) ENGINE = InnoDB;
+
+
+/****** Object:  Table Reconstructed_Run_Event_Counts    Script Date: 12/15/2008 5:36:25 PM ******/
+CREATE TABLE Reconstructed_Run_Event_Counts (
+	run_number int NOT NULL ,
+	provenance_group_id varchar (50)  NOT NULL ,
+	event_class varchar (50)  NOT NULL ,
+	event_count int NULL 
+) ENGINE = InnoDB;
+
+
+/****** Object:  Table Reconstruction_Quality    Script Date: 12/15/2008 5:36:25 PM ******/
+CREATE TABLE Reconstruction_Quality (
+	run_number int NOT NULL ,
+	provenance_group_id varchar (50)  NOT NULL ,
+	type varchar (50)  NOT NULL ,
+	isgood bit NOT NULL 
+) ENGINE = InnoDB;
+
+
+ALTER TABLE Detector_Configuration  ADD 
+	CONSTRAINT PK_DETECTOR_CONFIGURATION PRIMARY KEY   
+	(
+		detector_config_id,
+		component
+	);
+
+
+ALTER TABLE Energy_Class  ADD 
+	CONSTRAINT PK_ENERGY_CLASS PRIMARY KEY   
+	(
+		energy_range_name
+	);
+
+
+ALTER TABLE Package_Versions  ADD 
+	CONSTRAINT PK_Package_Versions PRIMARY KEY   
+	(
+		package_version_id,
+		package_name
+	);
+
+
+ALTER TABLE Processing_Change  ADD 
+	CONSTRAINT PK_Processing_Change PRIMARY KEY   
+	(
+		processing_change_id
+	);
+
+
+ALTER TABLE Raw_Run_Properties  ADD 
+	CONSTRAINT PK_RAW_RUN PRIMARY KEY   
+	(
+		run_number
+	);
+
+
+ALTER TABLE Calibrated_Scalers  ADD 
+	CONSTRAINT PK_CALIBRATED_SCALERS PRIMARY KEY   
+	(
+		type,
+		run_number,
+		created
+	);
+
+
+ALTER TABLE Dataset  ADD 
+	CONSTRAINT PK_Dataset PRIMARY KEY   
+	(
+		dataset_name,
+		first_run_number
+	);
+
+
+ALTER TABLE Raw_Run_Detector_Configuration  ADD 
+	CONSTRAINT PK_Raw_Run_Detector_Configuration PRIMARY KEY   
+	(
+		run_number,
+		detector_config_id,
+		component
+	);
+
+
+ALTER TABLE Repaired_Run_Properties  ADD 
+	CONSTRAINT PK_REPAIRED_RUN_PROPERTIES PRIMARY KEY   
+	(
+		run_number,
+		modification_time
+	);
+
+
+ALTER TABLE Software_Versions  ADD 
+	CONSTRAINT PK_SOFTWARE_VERSIONS PRIMARY KEY   
+	(
+		software_version_id
+	);
+
+
+ALTER TABLE Provenance_Group  ADD 
+	CONSTRAINT PK_PROVENANCE_GROUP PRIMARY KEY   
+	(
+		provenance_group_id
+	);
+
+
+ALTER TABLE Reconstructed_Run_Properties  ADD 
+	CONSTRAINT PK_RECONSTRUCTED_RUN_PROPERTIES PRIMARY KEY   
+	(
+		run_number,
+		provenance_group_id
+	);
+
+
+ALTER TABLE Reconstructed_Run_Event_Counts  ADD 
+	CONSTRAINT PK_RECONSTRUCTED_RUN_EVENT_COUNTS PRIMARY KEY   
+	(
+		run_number,
+		provenance_group_id,
+		event_class
+	);
+
+
+ALTER TABLE Reconstruction_Quality  ADD 
+	CONSTRAINT PK_RECONSTRUCTION_QUALITY PRIMARY KEY   
+	(
+		provenance_group_id,
+		run_number,
+		type
+	);
+
+
+ALTER TABLE Calibrated_Scalers ADD 
+	CONSTRAINT FK_CALIBRATED_SCALERS_RAW_RUN_PROPERTIES FOREIGN KEY 
+	(
+		run_number
+	) REFERENCES Raw_Run_Properties (
+		run_number
+	);
+
+
+ALTER TABLE Dataset ADD 
+	CONSTRAINT FK_DATASET_RAW_RUN_PROPERTIES FOREIGN KEY 
+	(
+		first_run_number
+	) REFERENCES Raw_Run_Properties (
+		run_number
+	);
+ALTER TABLE Dataset ADD 
+	CONSTRAINT FK_DATASET_RAW_RUN_PROPERTIES1 FOREIGN KEY 
+	(
+		last_run_number
+	) REFERENCES Raw_Run_Properties (
+		run_number
+	);
+
+
+ALTER TABLE Raw_Run_Detector_Configuration ADD 
+	CONSTRAINT FK_Raw_Run_Detector_Configuration_Detector_Configuration FOREIGN KEY 
+	(
+		detector_config_id,
+		component
+	) REFERENCES Detector_Configuration (
+		detector_config_id,
+		component
+	);
+ALTER TABLE Raw_Run_Detector_Configuration ADD 
+	CONSTRAINT FK_Raw_Run_Detector_Configuration_Raw_Run_Properties FOREIGN KEY 
+	(
+		run_number
+	) REFERENCES Raw_Run_Properties (
+		run_number
+	);
+
+
+ALTER TABLE Repaired_Run_Properties ADD 
+	CONSTRAINT FK_REPAIRED_RUN_PROPERTIES_RAW_RUN_PROPERTIES FOREIGN KEY 
+	(
+		run_number
+	) REFERENCES Raw_Run_Properties (
+		run_number
+	);
+
+
+ALTER TABLE Software_Versions ADD 
+	CONSTRAINT FK_Software_Versions_Package_Versions FOREIGN KEY 
+	(
+		package_version_id,
+		package_name
+	) REFERENCES Package_Versions (
+		package_version_id,
+		package_name
+	);
+
+
+ALTER TABLE Provenance_Group ADD 
+	CONSTRAINT FK_Provenance_Group_Processing_Change FOREIGN KEY 
+	(
+		processing_change_id
+	) REFERENCES Processing_Change (
+		processing_change_id
+	);
+ALTER TABLE Provenance_Group ADD 
+	CONSTRAINT FK_PROVENANCE_GROUP_SOFTWARE_VERSIONS FOREIGN KEY 
+	(
+		software_version_id
+	) REFERENCES Software_Versions (
+		software_version_id
+	);
+
+
+ALTER TABLE Reconstructed_Run_Properties ADD 
+	CONSTRAINT FK_RECONSTRUCTED_RUN_PROPERTIES_PROVENANCE_GROUP FOREIGN KEY 
+	(
+		provenance_group_id
+	) REFERENCES Provenance_Group (
+		provenance_group_id
+	);
+ALTER TABLE Reconstructed_Run_Properties ADD 
+	CONSTRAINT FK_RECONSTRUCTED_RUN_PROPERTIES_RAW_RUN_PROPERTIES FOREIGN KEY 
+	(
+		run_number
+	) REFERENCES Raw_Run_Properties (
+		run_number
+	);
+
+
+ALTER TABLE Reconstructed_Run_Event_Counts ADD 
+	CONSTRAINT FK_Reconstructed_Run_Event_Counts_Reconstructed_Run_Properties FOREIGN KEY 
+	(
+		run_number,
+		provenance_group_id
+	) REFERENCES Reconstructed_Run_Properties (
+		run_number,
+		provenance_group_id
+	);
+
+
+ALTER TABLE Reconstruction_Quality ADD 
+	CONSTRAINT FK_Reconstruction_Quality_Reconstructed_Run_Properties FOREIGN KEY 
+	(
+		run_number,
+		provenance_group_id
+	) REFERENCES Reconstructed_Run_Properties (
+		run_number,
+		provenance_group_id
+	);
+
+

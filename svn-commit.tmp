@@ -1,0 +1,17 @@
+Change directory name to be more descriptive.
+--This line, and those below, will be ignored--
+
+A  + src/AdminScripts
+A  + src/AdminScripts/rawdata
+M    src/AdminScripts/rawdata/build_sqlite.sh
+A  + src/AdminScripts/misc
+A  + src/AdminScripts/misc/build_eventstore_inputs.py
+A  + src/AdminScripts/misc/build_runlist.py
+A  + src/AdminScripts/REST/subjobs.pl
+A  + src/AdminScripts/REST/moveGrade.sh
+A  + src/AdminScripts/REST/gsr.pl
+A  + src/AdminScripts/REST/merge.sh
+A  + src/AdminScripts/REST/inject.csh
+A  + src/AdminScripts/REST/build_sqlite.sh
+A  + src/AdminScripts/REST/inject.jsub
+D    src/EventStoreScripts

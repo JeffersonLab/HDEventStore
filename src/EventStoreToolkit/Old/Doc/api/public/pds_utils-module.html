@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>pds_utils</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css"></link>
+</head>
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+
+<!-- =========== START OF NAVBAR =========== -->
+<table class="navbar" border="0" width="100%" cellpadding="0" bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="center">
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="trees.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="indices.html">Index</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar" align="right" width="100%">
+      <table border="0" cellpadding="0" cellspacing="0">
+      <tr><th class="navbar" align="center">
+        <p class="nomargin">
+          EventStoreToolkit&nbsp;API
+      </p></th></tr></table>
+    </th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <font size="-1"><b class="breadcrumbs">
+        Module&nbsp;pds_utils
+      </b></font></br>
+    </td>
+    <td><table cellpadding="0" cellspacing="0">
+      <tr><td align="right"><font size="-2">[<a href="../private/pds_utils-module.html">show&nbsp;private</a>&nbsp;|&nbsp;hide&nbsp;private]</font></td></tr>
+      <tr><td align="right"><font size="-2">[<a href="frames.html"target="_top">frames</a>&nbsp;|&nbsp;<a href="pds_utils-module.html" target="_top">no&nbsp;frames</a>]</font></td></tr>
+    </table></td>
+</tr></table>
+
+<!-- =========== START OF MODULE DESCRIPTION =========== -->
+<h2 class="module">Module pds_utils</h2>
+
+PDS file utilities (read number of proxies, etc.)
+<hr/>
+
+<!-- =========== START OF FUNCTION SUMMARY =========== -->
+<table class="summary" border="1" cellpadding="3" cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="summary">
+  <th colspan="2">Function Summary</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="pds_utils-module.html#charArrayOfStreams" class="summary-sig-name"><code>charArrayOfStreams</code></a>(<span class=summary-sig-arg>streamNames</span>)</span></code>
+<br />
+Return an array Int32 words corresponding to provide stream names</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="pds_utils-module.html#could_be_start" class="summary-sig-name"><code>could_be_start</code></a>(<span class=summary-sig-arg>iRestOfHeader</span>,
+          <span class=summary-sig-arg>iStartIndex</span>,
+          <span class=summary-sig-arg>iNumStreams</span>,
+          <span class=summary-sig-arg>iNumProxies</span>,
+          <span class=summary-sig-arg>iNumSeenStreams</span>)</span></code>
+<br />
+Determine if position in given header can be a start of new record 
+Start of list should have</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="pds_utils-module.html#could_be_string" class="summary-sig-name"><code>could_be_string</code></a>(<span class=summary-sig-arg>iRestOfHeader</span>,
+          <span class=summary-sig-arg>iStartIndex</span>)</span></code>
+<br />
+Determine if position in a header could be a string</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="pds_utils-module.html#find_probable_start" class="summary-sig-name"><code>find_probable_start</code></a>(<span class=summary-sig-arg>iRestOfHeader</span>,
+          <span class=summary-sig-arg>iStartIndex</span>,
+          <span class=summary-sig-arg>iNumStreams</span>,
+          <span class=summary-sig-arg>iNumProxies</span>)</span></code>
+<br />
+Find a new start in pds file: Start of list should have</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="pds_utils-module.html#find_proxies_in_streams" class="summary-sig-name"><code>find_proxies_in_streams</code></a>(<span class=summary-sig-arg>iRestOfHeader</span>,
+          <span class=summary-sig-arg>iStreamNames</span>,
+          <span class=summary-sig-arg>iProxyNames</span>)</span></code>
+<br />
+Find data proxies in a data streams</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="pds_utils-module.html#name_list" class="summary-sig-name"><code>name_list</code></a>(<span class=summary-sig-arg>iArray</span>)</span></code>
+<br />
+Construct a name list from given array</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="pds_utils-module.html#name_list_from_file" class="summary-sig-name"><code>name_list_from_file</code></a>(<span class=summary-sig-arg>fileDesc</span>,
+          <span class=summary-sig-arg>withNumberOfWords</span>)</span></code>
+<br />
+Form a name list</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="pds_utils-module.html#pdsDumpTime" class="summary-sig-name"><code>pdsDumpTime</code></a>(<span class=summary-sig-arg>file</span>)</span></code>
+<br />
+Dump unique id (UID) of pds file, in old notation it was called 
+time</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="pds_utils-module.html#printProxies" class="summary-sig-name"><code>printProxies</code></a>(<span class=summary-sig-arg>pList</span>)</span></code>
+<br />
+Print proxies in pds file</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="pds_utils-module.html#read_tag" class="summary-sig-name"><code>read_tag</code></a>(<span class=summary-sig-arg>iCharArray</span>,
+          <span class=summary-sig-arg>iIndex</span>)</span></code>
+<br />
+Read usage/production tag from given array</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="pds_utils-module.html#read_tags" class="summary-sig-name"><code>read_tags</code></a>(<span class=summary-sig-arg>iRestOfHeader</span>,
+          <span class=summary-sig-arg>iIndex</span>)</span></code>
+<br />
+Read usage/production tags from given header</td></tr>
+</table><br />
+
+
+<!-- =========== START OF VARIABLE SUMMARY =========== -->
+<table class="summary" border="1" cellpadding="3" cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="summary">
+  <th colspan="2">Variable Summary</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>str</code></font></td>
+<td><b><a href="pds_utils-module.html#ex_found_bad_word"><code>ex_found_bad_word</code></a></b> = <span title="'found bad word'"><code><span class="variable-quote">'</span>found&nbsp;bad&nbsp;word<span class="variable-quote">'</span>                     </code>
+</span></td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>long</code></font></td>
+<td><b><a href="pds_utils-module.html#MAGIC_NUMBER"><code>MAGIC_NUMBER</code></a></b> = <span title="4294967296L"><code>4294967296L                               </code>
+</span></td></tr>
+</table><br />
+
+
+<!-- =========== START OF FUNCTION DETAILS =========== -->
+<table class="details" border="1" cellpadding="3" cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="details">
+  <th colspan="2">Function Details</th></tr>
+</table>
+
+<a name="charArrayOfStreams"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">charArrayOfStreams</span>(<span class=sig-arg>streamNames</span>)</span>
+  </h3>
+  Return an array Int32 words corresponding to provide stream 
+  names
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="could_be_start"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">could_be_start</span>(<span class=sig-arg>iRestOfHeader</span>,
+          <span class=sig-arg>iStartIndex</span>,
+          <span class=sig-arg>iNumStreams</span>,
+          <span class=sig-arg>iNumProxies</span>,
+          <span class=sig-arg>iNumSeenStreams</span>)</span>
+  </h3>
+  Determine if position in given header can be a start of new record 
+  Start of list should have
+  <ul>
+    <li>
+      a number less than # proxies followed by another number less 
+      than # proxies followed by a value that could be a valid string
+    </li>
+    <li>
+      or a 0 followed by a condition 1 or 2 BUT the number of times 
+      this condition is applied must be less than the number of 
+      streams
+    </li>
+  </ul>
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="could_be_string"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">could_be_string</span>(<span class=sig-arg>iRestOfHeader</span>,
+          <span class=sig-arg>iStartIndex</span>)</span>
+  </h3>
+  Determine if position in a header could be a string
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="find_probable_start"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">find_probable_start</span>(<span class=sig-arg>iRestOfHeader</span>,
+          <span class=sig-arg>iStartIndex</span>,
+          <span class=sig-arg>iNumStreams</span>,
+          <span class=sig-arg>iNumProxies</span>)</span>
+  </h3>
+  Find a new start in pds file: Start of list should have
+  <ul>
+    <li>
+      a number less than # proxies followed by another number less 
+      than # proxies followed by a value that could be a valid string
+    </li>
+    <li>
+      or a 0 followed by a condition 1 or 2 BUT the number of times 
+      this condition is applied must be less than the number of 
+      streams
+    </li>
+  </ul>
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="find_proxies_in_streams"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">find_proxies_in_streams</span>(<span class=sig-arg>iRestOfHeader</span>,
+          <span class=sig-arg>iStreamNames</span>,
+          <span class=sig-arg>iProxyNames</span>)</span>
+  </h3>
+  Find data proxies in a data streams
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="name_list"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">name_list</span>(<span class=sig-arg>iArray</span>)</span>
+  </h3>
+  Construct a name list from given array
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="name_list_from_file"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">name_list_from_file</span>(<span class=sig-arg>fileDesc</span>,
+          <span class=sig-arg>withNumberOfWords</span>=<span class=sig-default>''</span>)</span>
+  </h3>
+  Form a name list
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="pdsDumpTime"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">pdsDumpTime</span>(<span class=sig-arg>file</span>)</span>
+  </h3>
+  Dump unique id (UID) of pds file, in old notation it was called 
+  time
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="printProxies"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">printProxies</span>(<span class=sig-arg>pList</span>)</span>
+  </h3>
+  Print proxies in pds file
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="read_tag"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">read_tag</span>(<span class=sig-arg>iCharArray</span>,
+          <span class=sig-arg>iIndex</span>)</span>
+  </h3>
+  Read usage/production tag from given array
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="read_tags"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">read_tags</span>(<span class=sig-arg>iRestOfHeader</span>,
+          <span class=sig-arg>iIndex</span>)</span>
+  </h3>
+  Read usage/production tags from given header
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+<br />
+
+
+<!-- =========== START OF VARIABLE DETAILS =========== -->
+<table class="details" border="1" cellpadding="3" cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="details">
+  <th colspan="2">Variable Details</th></tr>
+</table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="ex_found_bad_word"></a>
+<h3>ex_found_bad_word</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>str</code>
+
+      </dd>
+<span title="'found bad word'">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+<span class="variable-quote">'</span>found bad word<span class="variable-quote">'</span>                                                       </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="MAGIC_NUMBER"></a>
+<h3>MAGIC_NUMBER</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>long</code>
+
+      </dd>
+<span title="4294967296L">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+4294967296L                                                            </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<br />
+
+
+<!-- =========== START OF NAVBAR =========== -->
+<table class="navbar" border="0" width="100%" cellpadding="0" bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="center">
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="trees.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="indices.html">Index</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar" align="right" width="100%">
+      <table border="0" cellpadding="0" cellspacing="0">
+      <tr><th class="navbar" align="center">
+        <p class="nomargin">
+          EventStoreToolkit&nbsp;API
+      </p></th></tr></table>
+    </th>
+  </tr>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td align="left"><font size="-2">Generated by Epydoc 2.1 on Tue Jan 24 10:46:00 2006</font></td>
+    <td align="right"><a href="http://epydoc.sourceforge.net"
+                      ><font size="-2">http://epydoc.sf.net</font></a></td>
+  </tr>
+</table>
+</body>
+</html>

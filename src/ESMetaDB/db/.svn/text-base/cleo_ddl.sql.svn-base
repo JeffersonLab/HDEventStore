@@ -1,0 +1,354 @@
+/****** Object:  Table [dbo].[Detector_Configuration]    Script Date: 12/15/2008 5:36:24 PM ******/
+CREATE TABLE [dbo].[Detector_Configuration] (
+	[detector_config_id] [varchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL ,
+	[component] [varchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL ,
+	[present] [bit] NOT NULL 
+) ON [PRIMARY]
+GO
+
+/****** Object:  Table [dbo].[Energy_Class]    Script Date: 12/15/2008 5:36:24 PM ******/
+CREATE TABLE [dbo].[Energy_Class] (
+	[energy_range_name] [varchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL ,
+	[min_beam_energy] [float] NULL ,
+	[max_beam_energy] [float] NULL 
+) ON [PRIMARY]
+GO
+
+/****** Object:  Table [dbo].[Package_Versions]    Script Date: 12/15/2008 5:36:24 PM ******/
+CREATE TABLE [dbo].[Package_Versions] (
+	[package_version_id] [varchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL ,
+	[package_name] [varchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL ,
+	[package_cvs_tag] [varchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL 
+) ON [PRIMARY]
+GO
+
+/****** Object:  Table [dbo].[Processing_Change]    Script Date: 12/15/2008 5:36:24 PM ******/
+CREATE TABLE [dbo].[Processing_Change] (
+	[processing_change_id] [varchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL ,
+	[processing_change_type] [varchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL ,
+	[processing_change_description] [varchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL ,
+	[processing_change_date] [datetime] NULL 
+) ON [PRIMARY]
+GO
+
+/****** Object:  Table [dbo].[Raw_Run_Properties]    Script Date: 12/15/2008 5:36:24 PM ******/
+CREATE TABLE [dbo].[Raw_Run_Properties] (
+	[run_number] [int] NOT NULL ,
+	[start_time] [datetime] NULL ,
+	[event_count] [int] NULL ,
+	[last_event_number] [int] NULL ,
+	[luminosity] [float] NULL ,
+	[beam_energy] [float] NULL ,
+	[magnetic_field] [float] NULL ,
+	[run_type] [varchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL ,
+	[runmanager_approved] [bit] NULL ,
+	[termination_status] [varchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL ,
+	[trigger_config] [binary] (50) NULL 
+) ON [PRIMARY]
+GO
+
+/****** Object:  Table [dbo].[Calibrated_Scalers]    Script Date: 12/15/2008 5:36:24 PM ******/
+CREATE TABLE [dbo].[Calibrated_Scalers] (
+	[type] [varchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL ,
+	[run_number] [int] NOT NULL ,
+	[created] [datetime] NOT NULL ,
+	[value] [float] NULL 
+) ON [PRIMARY]
+GO
+
+/****** Object:  Table [dbo].[Dataset]    Script Date: 12/15/2008 5:36:24 PM ******/
+CREATE TABLE [dbo].[Dataset] (
+	[dataset_name] [varchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL ,
+	[first_run_number] [int] NOT NULL ,
+	[last_run_number] [int] NOT NULL 
+) ON [PRIMARY]
+GO
+
+/****** Object:  Table [dbo].[Raw_Run_Detector_Configuration]    Script Date: 12/15/2008 5:36:24 PM ******/
+CREATE TABLE [dbo].[Raw_Run_Detector_Configuration] (
+	[run_number] [int] NOT NULL ,
+	[detector_config_id] [varchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL ,
+	[component] [varchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL 
+) ON [PRIMARY]
+GO
+
+/****** Object:  Table [dbo].[Repaired_Run_Properties]    Script Date: 12/15/2008 5:36:24 PM ******/
+CREATE TABLE [dbo].[Repaired_Run_Properties] (
+	[run_number] [int] NOT NULL ,
+	[modification_time] [datetime] NOT NULL ,
+	[event_count] [int] NULL ,
+	[last_event_number] [int] NULL 
+) ON [PRIMARY]
+GO
+
+/****** Object:  Table [dbo].[Software_Versions]    Script Date: 12/15/2008 5:36:25 PM ******/
+CREATE TABLE [dbo].[Software_Versions] (
+	[software_version_id] [varchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL ,
+	[code_release] [varchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL ,
+	[package_version_id] [varchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL ,
+	[package_name] [varchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL ,
+	[package_change_date] [datetime] NULL 
+) ON [PRIMARY]
+GO
+
+/****** Object:  Table [dbo].[Provenance_Group]    Script Date: 12/15/2008 5:36:25 PM ******/
+CREATE TABLE [dbo].[Provenance_Group] (
+	[provenance_group_id] [varchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL ,
+	[software_version_id] [varchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL ,
+	[constants_tag] [varchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL ,
+	[processing_change_id] [varchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL 
+) ON [PRIMARY]
+GO
+
+/****** Object:  Table [dbo].[Reconstructed_Run_Properties]    Script Date: 12/15/2008 5:36:25 PM ******/
+CREATE TABLE [dbo].[Reconstructed_Run_Properties] (
+	[run_number] [int] NOT NULL ,
+	[provenance_group_id] [varchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL ,
+	[events_written] [int] NULL ,
+	[start_time] [datetime] NULL ,
+	[finish_time] [datetime] NULL 
+) ON [PRIMARY]
+GO
+
+/****** Object:  Table [dbo].[Reconstructed_Run_Event_Counts]    Script Date: 12/15/2008 5:36:25 PM ******/
+CREATE TABLE [dbo].[Reconstructed_Run_Event_Counts] (
+	[run_number] [int] NOT NULL ,
+	[provenance_group_id] [varchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL ,
+	[event_class] [varchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL ,
+	[event_count] [int] NULL 
+) ON [PRIMARY]
+GO
+
+/****** Object:  Table [dbo].[Reconstruction_Quality]    Script Date: 12/15/2008 5:36:25 PM ******/
+CREATE TABLE [dbo].[Reconstruction_Quality] (
+	[run_number] [int] NOT NULL ,
+	[provenance_group_id] [varchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL ,
+	[type] [varchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL ,
+	[isgood] [bit] NOT NULL 
+) ON [PRIMARY]
+GO
+
+ALTER TABLE [dbo].[Detector_Configuration] WITH NOCHECK ADD 
+	CONSTRAINT [PK_DETECTOR_CONFIGURATION] PRIMARY KEY  CLUSTERED 
+	(
+		[detector_config_id],
+		[component]
+	)  ON [PRIMARY] 
+GO
+
+ALTER TABLE [dbo].[Energy_Class] WITH NOCHECK ADD 
+	CONSTRAINT [PK_ENERGY_CLASS] PRIMARY KEY  CLUSTERED 
+	(
+		[energy_range_name]
+	)  ON [PRIMARY] 
+GO
+
+ALTER TABLE [dbo].[Package_Versions] WITH NOCHECK ADD 
+	CONSTRAINT [PK_Package_Versions] PRIMARY KEY  CLUSTERED 
+	(
+		[package_version_id],
+		[package_name]
+	)  ON [PRIMARY] 
+GO
+
+ALTER TABLE [dbo].[Processing_Change] WITH NOCHECK ADD 
+	CONSTRAINT [PK_Processing_Change] PRIMARY KEY  CLUSTERED 
+	(
+		[processing_change_id]
+	)  ON [PRIMARY] 
+GO
+
+ALTER TABLE [dbo].[Raw_Run_Properties] WITH NOCHECK ADD 
+	CONSTRAINT [PK_RAW_RUN] PRIMARY KEY  CLUSTERED 
+	(
+		[run_number]
+	)  ON [PRIMARY] 
+GO
+
+ALTER TABLE [dbo].[Calibrated_Scalers] WITH NOCHECK ADD 
+	CONSTRAINT [PK_CALIBRATED_SCALERS] PRIMARY KEY  CLUSTERED 
+	(
+		[type],
+		[run_number],
+		[created]
+	)  ON [PRIMARY] 
+GO
+
+ALTER TABLE [dbo].[Dataset] WITH NOCHECK ADD 
+	CONSTRAINT [PK_Dataset] PRIMARY KEY  CLUSTERED 
+	(
+		[dataset_name],
+		[first_run_number]
+	)  ON [PRIMARY] 
+GO
+
+ALTER TABLE [dbo].[Raw_Run_Detector_Configuration] WITH NOCHECK ADD 
+	CONSTRAINT [PK_Raw_Run_Detector_Configuration] PRIMARY KEY  CLUSTERED 
+	(
+		[run_number],
+		[detector_config_id],
+		[component]
+	)  ON [PRIMARY] 
+GO
+
+ALTER TABLE [dbo].[Repaired_Run_Properties] WITH NOCHECK ADD 
+	CONSTRAINT [PK_REPAIRED_RUN_PROPERTIES] PRIMARY KEY  CLUSTERED 
+	(
+		[run_number],
+		[modification_time]
+	)  ON [PRIMARY] 
+GO
+
+ALTER TABLE [dbo].[Software_Versions] WITH NOCHECK ADD 
+	CONSTRAINT [PK_SOFTWARE_VERSIONS] PRIMARY KEY  CLUSTERED 
+	(
+		[software_version_id]
+	)  ON [PRIMARY] 
+GO
+
+ALTER TABLE [dbo].[Provenance_Group] WITH NOCHECK ADD 
+	CONSTRAINT [PK_PROVENANCE_GROUP] PRIMARY KEY  CLUSTERED 
+	(
+		[provenance_group_id]
+	)  ON [PRIMARY] 
+GO
+
+ALTER TABLE [dbo].[Reconstructed_Run_Properties] WITH NOCHECK ADD 
+	CONSTRAINT [PK_RECONSTRUCTED_RUN_PROPERTIES] PRIMARY KEY  CLUSTERED 
+	(
+		[run_number],
+		[provenance_group_id]
+	)  ON [PRIMARY] 
+GO
+
+ALTER TABLE [dbo].[Reconstructed_Run_Event_Counts] WITH NOCHECK ADD 
+	CONSTRAINT [PK_RECONSTRUCTED_RUN_EVENT_COUNTS] PRIMARY KEY  CLUSTERED 
+	(
+		[run_number],
+		[provenance_group_id],
+		[event_class]
+	)  ON [PRIMARY] 
+GO
+
+ALTER TABLE [dbo].[Reconstruction_Quality] WITH NOCHECK ADD 
+	CONSTRAINT [PK_RECONSTRUCTION_QUALITY] PRIMARY KEY  CLUSTERED 
+	(
+		[provenance_group_id],
+		[run_number],
+		[type]
+	)  ON [PRIMARY] 
+GO
+
+ALTER TABLE [dbo].[Calibrated_Scalers] ADD 
+	CONSTRAINT [FK_CALIBRATED_SCALERS_RAW_RUN_PROPERTIES] FOREIGN KEY 
+	(
+		[run_number]
+	) REFERENCES [dbo].[Raw_Run_Properties] (
+		[run_number]
+	)
+GO
+
+ALTER TABLE [dbo].[Dataset] ADD 
+	CONSTRAINT [FK_DATASET_RAW_RUN_PROPERTIES] FOREIGN KEY 
+	(
+		[first_run_number]
+	) REFERENCES [dbo].[Raw_Run_Properties] (
+		[run_number]
+	),
+	CONSTRAINT [FK_DATASET_RAW_RUN_PROPERTIES1] FOREIGN KEY 
+	(
+		[last_run_number]
+	) REFERENCES [dbo].[Raw_Run_Properties] (
+		[run_number]
+	)
+GO
+
+ALTER TABLE [dbo].[Raw_Run_Detector_Configuration] ADD 
+	CONSTRAINT [FK_Raw_Run_Detector_Configuration_Detector_Configuration] FOREIGN KEY 
+	(
+		[detector_config_id],
+		[component]
+	) REFERENCES [dbo].[Detector_Configuration] (
+		[detector_config_id],
+		[component]
+	),
+	CONSTRAINT [FK_Raw_Run_Detector_Configuration_Raw_Run_Properties] FOREIGN KEY 
+	(
+		[run_number]
+	) REFERENCES [dbo].[Raw_Run_Properties] (
+		[run_number]
+	)
+GO
+
+ALTER TABLE [dbo].[Repaired_Run_Properties] ADD 
+	CONSTRAINT [FK_REPAIRED_RUN_PROPERTIES_RAW_RUN_PROPERTIES] FOREIGN KEY 
+	(
+		[run_number]
+	) REFERENCES [dbo].[Raw_Run_Properties] (
+		[run_number]
+	)
+GO
+
+ALTER TABLE [dbo].[Software_Versions] ADD 
+	CONSTRAINT [FK_Software_Versions_Package_Versions] FOREIGN KEY 
+	(
+		[package_version_id],
+		[package_name]
+	) REFERENCES [dbo].[Package_Versions] (
+		[package_version_id],
+		[package_name]
+	)
+GO
+
+ALTER TABLE [dbo].[Provenance_Group] ADD 
+	CONSTRAINT [FK_Provenance_Group_Processing_Change] FOREIGN KEY 
+	(
+		[processing_change_id]
+	) REFERENCES [dbo].[Processing_Change] (
+		[processing_change_id]
+	),
+	CONSTRAINT [FK_PROVENANCE_GROUP_SOFTWARE_VERSIONS] FOREIGN KEY 
+	(
+		[software_version_id]
+	) REFERENCES [dbo].[Software_Versions] (
+		[software_version_id]
+	)
+GO
+
+ALTER TABLE [dbo].[Reconstructed_Run_Properties] ADD 
+	CONSTRAINT [FK_RECONSTRUCTED_RUN_PROPERTIES_PROVENANCE_GROUP] FOREIGN KEY 
+	(
+		[provenance_group_id]
+	) REFERENCES [dbo].[Provenance_Group] (
+		[provenance_group_id]
+	),
+	CONSTRAINT [FK_RECONSTRUCTED_RUN_PROPERTIES_RAW_RUN_PROPERTIES] FOREIGN KEY 
+	(
+		[run_number]
+	) REFERENCES [dbo].[Raw_Run_Properties] (
+		[run_number]
+	)
+GO
+
+ALTER TABLE [dbo].[Reconstructed_Run_Event_Counts] ADD 
+	CONSTRAINT [FK_Reconstructed_Run_Event_Counts_Reconstructed_Run_Properties] FOREIGN KEY 
+	(
+		[run_number],
+		[provenance_group_id]
+	) REFERENCES [dbo].[Reconstructed_Run_Properties] (
+		[run_number],
+		[provenance_group_id]
+	)
+GO
+
+ALTER TABLE [dbo].[Reconstruction_Quality] ADD 
+	CONSTRAINT [FK_Reconstruction_Quality_Reconstructed_Run_Properties] FOREIGN KEY 
+	(
+		[run_number],
+		[provenance_group_id]
+	) REFERENCES [dbo].[Reconstructed_Run_Properties] (
+		[run_number],
+		[provenance_group_id]
+	)
+GO
+

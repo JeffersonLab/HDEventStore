@@ -1,0 +1,34 @@
+I got DDL and data files (in CSV format) from Manuel Calimlin. I converted them from MSSQL
+into MySQL using the following procedure:
+
+All files where in dos format so I used
+
+dos2unix file
+
+1. cat cleo_ddl.sql | sed 's/\[dbo\]\.//g' | sed 's/\[//g' | sed 's/\]//g' |sed 's/COLLATE SQL_Latin1_General_CP1_CI_AS//g' | sed 's/GO//g' | sed 's/CLUSTERED//g' | sed 's/ON PRIMARY/ENGINE = InnoDB;/g' | sed 's/WITH NOCHECK//g'> schema.sql
+
+2. change in schema.sql 'bit' type to 'tinyint' since it's not supported by MySQL 4.x
+
+3. cat Dataset.csv | awk '{print "insert into Dataset (dataset_name, first_run_number, last_run_number) values("$0");"}' > dataset.sql
+Made similar step for Energy_Class.sql to convert into energy.sql
+
+4. cat Raw_Run_Properties.csv | awk '{print "insert into Raw_Run_Properties (run_number,start_time,event_count,last_event_number,luminosity,beam_energy,magnetic_field,run_type,runmanager_approved,termination_status,trigger_config) values("$0"\"\");"}' > raw_run_properties.sql
+
+5. python adjust_raw_run_properties.py
+
+6. modify new_raw_run_properties.sql. All values True to be 1, False to be 0
+
+7. login to MySQL and did the following:
+
+source schema.sql
+
+in MySQL 4.x it complain 
+ERROR 1005: Can't create table './CleoMetaDB/#sql-12e4_98d4a.frm' (errno: 150)
+This error indicates that some foreign key constrain cannot be made. Due to shortage of
+time while migrating service I didn't resolve all conflicts, since those tables we never used.
+
+To populate cleo data I used the following:
+
+source new_raw_run_properties.sql
+source dataset.sql
+source energy.sql

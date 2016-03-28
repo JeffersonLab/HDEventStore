@@ -1,0 +1,24 @@
+Valentin Kuznetsov, Dec 16, 2008 (vkuznet at gmail dot com)
+
+This is attempt to make Cleo Meta Data service originally created by CS department.
+Requirements:
+- python 2.4
+- CherryPy version 3.x
+- SQLAlchemy 0.4
+- elementtree and cElementTree as of 20081216
+
+The web server is based on CherryPy and written in python, see CleoMetaDataServer.py
+The initial environment is set by setup.sh, please adjust as necessary
+To access underlying MySQL, please create DBParam file with the following content:
+[Global]
+user=<db_user_name>
+pass=<db_user_password>
+host=lnx150.lns.cornell.edu
+db=CleoMetaDB
+
+The MySQL DB should be named as CleoMetaDB (or anything wrt to db= parameter above).
+It's schema is placed in db subdirectory, see README over there for migratin steps from MSSQL
+to MySQL v4.x
+
+To test the service, use test_client.sh script which invoke soap.py with given parameters.
+

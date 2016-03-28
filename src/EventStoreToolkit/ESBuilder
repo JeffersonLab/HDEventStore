@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+# setup environment
+#. `dirname $0`/setup.sh
+
+# run actual script
+#gdb -ex r --args python `dirname $0`/ESBuilder.py $*
+`dirname $0`/ESBuilder.py $*

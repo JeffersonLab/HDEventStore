@@ -1,0 +1,592 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>es_init</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css"></link>
+</head>
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+
+<!-- =========== START OF NAVBAR =========== -->
+<table class="navbar" border="0" width="100%" cellpadding="0" bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="center">
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="trees.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="indices.html">Index</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar" align="right" width="100%">
+      <table border="0" cellpadding="0" cellspacing="0">
+      <tr><th class="navbar" align="center">
+        <p class="nomargin">
+          EventStoreToolkit&nbsp;API
+      </p></th></tr></table>
+    </th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <font size="-1"><b class="breadcrumbs">
+        Module&nbsp;es_init
+      </b></font></br>
+    </td>
+    <td><table cellpadding="0" cellspacing="0">
+      <tr><td align="right"><font size="-2">[show&nbsp;private&nbsp;|&nbsp;<a href="../public/es_init-module.html">hide&nbsp;private</a>]</font></td></tr>
+      <tr><td align="right"><font size="-2">[<a href="frames.html"target="_top">frames</a>&nbsp;|&nbsp;<a href="es_init-module.html" target="_top">no&nbsp;frames</a>]</font></td></tr>
+    </table></td>
+</tr></table>
+
+<!-- =========== START OF MODULE DESCRIPTION =========== -->
+<h2 class="module">Module es_init</h2>
+
+Set of helper classes to initialize ES toolkit
+<hr/>
+
+<!-- =========== START OF CLASSES =========== -->
+<table class="summary" border="1" cellpadding="3" cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="summary">
+  <th colspan="2">Classes</th></tr>
+<tr><td width="15%">
+  <b><a href="es_init.ESFileTypes-class.html"><code>ESFileTypes</code></a></b></td>
+  <td>Base class which defines file types accepted by EventStore</td></tr>
+<tr><td width="15%">
+  <b><a href="es_init.ESInit-class.html"><code>ESInit</code></a></b></td>
+  <td>Base class which establish connection with EventStore</td></tr>
+</table><br />
+
+
+<!-- =========== START OF FUNCTION SUMMARY =========== -->
+<table class="summary" border="1" cellpadding="3" cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="summary">
+  <th colspan="2">Function Summary</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">        none
+</font></td>
+  <td><code><span class="summary-sig"><a href="es_init-module.html#checkArg" class="summary-sig-name"><code>checkArg</code></a>(<span class=summary-sig-arg>optValues</span>)</span></code>
+<br />
+Check provided list of arguments for leading '-'.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="es_init-module.html#checkPythonVersion" class="summary-sig-name"><code>checkPythonVersion</code></a>(<span class=summary-sig-arg>version</span>)</span></code>
+<br />
+Check if provided version is greater then current version of 
+python.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">        tuple
+</font></td>
+  <td><code><span class="summary-sig"><a href="es_init-module.html#connectToMasterDB" class="summary-sig-name"><code>connectToMasterDB</code></a>(<span class=summary-sig-arg>dbName</span>,
+          <span class=summary-sig-arg>dbHost</span>,
+          <span class=summary-sig-arg>port</span>,
+          <span class=summary-sig-arg>socket</span>,
+          <span class=summary-sig-arg>verbose</span>)</span></code>
+<br />
+Connect to master DB</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="es_init-module.html#decodeHostNameString" class="summary-sig-name"><code>decodeHostNameString</code></a>(<span class=summary-sig-arg>hostName</span>)</span></code>
+<br />
+Decode provided string to dbName&#64;dbHost:dbPort:dbSocket</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">        tuple (db, dbType)
+</font></td>
+  <td><code><span class="summary-sig"><a href="es_init-module.html#ESDBConnector" class="summary-sig-name"><code>ESDBConnector</code></a>(<span class=summary-sig-arg>dbHost</span>,
+          <span class=summary-sig-arg>dbName</span>,
+          <span class=summary-sig-arg>userName</span>,
+          <span class=summary-sig-arg>userPass</span>,
+          <span class=summary-sig-arg>isolationLevel</span>,
+          <span class=summary-sig-arg>dbPort</span>,
+          <span class=summary-sig-arg>dbSocket</span>)</span></code>
+<br />
+ESDBConnector connect to given host(MySQL) and/or file(SQLite) using 
+dbName.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">        none
+</font></td>
+  <td><code><span class="summary-sig"><a href="es_init-module.html#ESExamples" class="summary-sig-name"><code>ESExamples</code></a>()</span></code>
+<br />
+Contain a list of usefull examples how to add/modify data to 
+EventStore.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">        none
+</font></td>
+  <td><code><span class="summary-sig"><a href="es_init-module.html#ESInput" class="summary-sig-name"><code>ESInput</code></a>(<span class=summary-sig-arg>userCommand</span>,
+          <span class=summary-sig-arg>outputLog</span>,
+          <span class=summary-sig-arg>dbType</span>)</span></code>
+<br />
+Write userCommand information into EventStore db.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">        tuple (oList,dictOpt)
+</font></td>
+  <td><code><span class="summary-sig"><a href="es_init-module.html#ESOptions" class="summary-sig-name"><code>ESOptions</code></a>(<span class=summary-sig-arg>userCommand</span>,
+          <span class=summary-sig-arg>optList</span>,
+          <span class=summary-sig-arg>usage</span>,
+          <span class=summary-sig-arg>usageDescription</span>,
+          <span class=summary-sig-arg>examples</span>)</span></code>
+<br />
+Analyse common options of EventStore toolkit: [ -help ] [ --help ] [ 
+-examples ] [ -profile ] [ -verbose ] [ -historyfile &lt;filename&gt; ] [ 
+-db &lt;name&#64;host:port:socket or fileName&gt; ] [ -user 
+&lt;username&gt; -password &lt;password&gt; ] [ -logFile 
+&lt;/path/filename or 'stdout' or 'stderr'&gt; ]</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">        integer
+</font></td>
+  <td><code><span class="summary-sig"><a href="es_init-module.html#ESOutput" class="summary-sig-name"><code>ESOutput</code></a>(<span class=summary-sig-arg>status</span>,
+          <span class=summary-sig-arg>userCommand</span>,
+          <span class=summary-sig-arg>historyFile</span>,
+          <span class=summary-sig-arg>outputLog</span>,
+          <span class=summary-sig-arg>globalLog</span>)</span></code>
+<br />
+Write out final information about job status to EventStore db log.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">        tuple (outputLog,globalLog)
+</font></td>
+  <td><code><span class="summary-sig"><a href="es_init-module.html#ESOutputLog" class="summary-sig-name"><code>ESOutputLog</code></a>(<span class=summary-sig-arg>logFile</span>)</span></code>
+<br />
+Setup EventStore db log.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">        string
+</font></td>
+  <td><code><span class="summary-sig"><a href="es_init-module.html#helpMsg" class="summary-sig-name"><code>helpMsg</code></a>(<span class=summary-sig-arg>tool</span>,
+          <span class=summary-sig-arg>localOpt</span>)</span></code>
+<br />
+Form usage message.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">        tuple
+</font></td>
+  <td><code><span class="summary-sig"><a href="es_init-module.html#requestDataFromDB" class="summary-sig-name"><code>requestDataFromDB</code></a>(<span class=summary-sig-arg>dbName</span>,
+          <span class=summary-sig-arg>dbHost</span>,
+          <span class=summary-sig-arg>port</span>,
+          <span class=summary-sig-arg>socket</span>,
+          <span class=summary-sig-arg>query</span>,
+          <span class=summary-sig-arg>whatToRetrieve</span>,
+          <span class=summary-sig-arg>verbose</span>)</span></code>
+<br />
+Send query to specified DB.</td></tr>
+</table><br />
+
+
+<!-- =========== START OF FUNCTION DETAILS =========== -->
+<table class="details" border="1" cellpadding="3" cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="details">
+  <th colspan="2">Function Details</th></tr>
+</table>
+
+<a name="checkArg"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">checkArg</span>(<span class=sig-arg>optValues</span>)</span>
+  </h3>
+  Check provided list of arguments for leading '-'.
+  <dl><dt></dt><dd>
+    <dl><dt><b>Parameters:</b></dt>
+      <dd><code><b>optValues</b></code> -
+         list of argument values provided by user
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=list)</i>
+      </dd>
+    </dl>
+    <dl><dt><b>Returns:</b></dt>
+      <dd>
+        exit 1 if given value is not allowed, otherwise return 
+        nothing.
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=none)</i>
+      </dd>
+    </dl>
+  </dd></dl>
+</td></tr></table>
+
+<a name="checkPythonVersion"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">checkPythonVersion</span>(<span class=sig-arg>version</span>)</span>
+  </h3>
+  Check if provided version is greater then current version of 
+  python.
+  <dl><dt></dt><dd>
+    <dl><dt><b>Parameters:</b></dt>
+      <dd><code><b>version</b></code> -
+         python version, e.g. 2.4
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=string)</i>
+      </dd>
+    </dl>
+    <dl><dt><b>Returns:</b></dt>
+      <dd>
+        true or false
+      </dd>
+    </dl>
+  </dd></dl>
+</td></tr></table>
+
+<a name="connectToMasterDB"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">connectToMasterDB</span>(<span class=sig-arg>dbName</span>,
+          <span class=sig-arg>dbHost</span>,
+          <span class=sig-arg>port</span>,
+          <span class=sig-arg>socket</span>,
+          <span class=sig-arg>verbose</span>=<span class=sig-default>0</span>)</span>
+  </h3>
+  Connect to master DB
+  <dl><dt></dt><dd>
+    <dl><dt><b>Parameters:</b></dt>
+      <dd><code><b>dbName</b></code> -
+         name of underlying DB, e.g. EventStore
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=string)</i>
+      <dd><code><b>dbHost</b></code> -
+         hostname or file name for DB, e.g. lnx151 or sqlite.db
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=string)</i>
+      <dd><code><b>port</b></code> -
+         port number, e.g. 3306 is default for MySQL
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=integer)</i>
+      <dd><code><b>socket</b></code> -
+         file name of the socket
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=string)</i>
+      </dd>
+    </dl>
+    <dl><dt><b>Returns:</b></dt>
+      <dd>
+        db pointer and db type, e.g. &quot;sqlite&quot;
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=tuple)</i>
+      </dd>
+    </dl>
+  </dd></dl>
+</td></tr></table>
+
+<a name="decodeHostNameString"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">decodeHostNameString</span>(<span class=sig-arg>hostName</span>)</span>
+  </h3>
+  Decode provided string to dbName&#64;dbHost:dbPort:dbSocket
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="ESDBConnector"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">ESDBConnector</span>(<span class=sig-arg>dbHost</span>,
+          <span class=sig-arg>dbName</span>,
+          <span class=sig-arg>userName</span>=<span class=sig-default>''</span>,
+          <span class=sig-arg>userPass</span>=<span class=sig-default>''</span>,
+          <span class=sig-arg>isolationLevel</span>=<span class=sig-default>''</span>,
+          <span class=sig-arg>dbPort</span>=<span class=sig-default>''</span>,
+          <span class=sig-arg>dbSocket</span>=<span class=sig-default>''</span>)</span>
+  </h3>
+  ESDBConnector connect to given host(MySQL) and/or file(SQLite) using 
+  dbName. In the cae of SQLite user may pass isolationLevel:
+  <ul>
+    <li>
+      default mode, if no isolationLevel is passed will start db with 
+      BEGIN
+    </li>
+    <li>
+      autocommit mode, isolationLeve='None'
+    </li>
+    <li>
+      you may also pass: DEFERRED, IMMEDIATE or EXCLUSIVE levels
+      <ul>
+        <li>
+          DEFERRED deffer locks until first access
+        </li>
+        <li>
+          IMMEDIATE implies lock for first BEGIN IMMEDIATE and doesn't 
+          allow anything to write to DB, but allow to read
+        </li>
+        <li>
+          EXCLUSIVE will lock entire DB.
+        </li>
+      </ul>
+    </li>
+  </ul>
+  We use IMMEDIATE for SQLite and READ COMMITTED isolation level for 
+  MySQL. We also turn off autocommit.
+  <dl><dt></dt><dd>
+    <dl><dt><b>Parameters:</b></dt>
+      <dd><code><b>dbHost</b></code> -
+         name of the host, lnx151.lns.cornell.edu or db file name 
+        /sqlite.db
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=string)</i>
+      <dd><code><b>dbName</b></code> -
+         DB name, obsolete in the case of SQLite
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=string)</i>
+      <dd><code><b>userName</b></code> -
+         user name
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=string)</i>
+      <dd><code><b>userPass</b></code> -
+         password
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=string)</i>
+      <dd><code><b>isolationLevel</b></code> -
+         valid only for SQLite, setup isolation level
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=string)</i>
+      <dd><code><b>dbPort</b></code> -
+         port number, e.g. default for MysQL is 3306
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=integer)</i>
+      <dd><code><b>dbSocket</b></code> -
+         socket name, e.g. /var/log/mysql=
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=string)</i>
+      </dd>
+    </dl>
+    <dl><dt><b>Returns:</b></dt>
+      <dd>
+        return object to underlying DB and its type, e.g. 
+        &quot;sqlite&quot; or &quot;mysql&quot;
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=tuple (db, dbType))</i>
+      </dd>
+    </dl>
+  </dd></dl>
+</td></tr></table>
+
+<a name="ESExamples"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">ESExamples</span>()</span>
+  </h3>
+  Contain a list of usefull examples how to add/modify data to 
+  EventStore.
+  <dl><dt></dt><dd>
+    <dl><dt><b>Returns:</b></dt>
+      <dd>
+        none
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=none)</i>
+      </dd>
+    </dl>
+  </dd></dl>
+</td></tr></table>
+
+<a name="ESInput"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">ESInput</span>(<span class=sig-arg>userCommand</span>,
+          <span class=sig-arg>outputLog</span>,
+          <span class=sig-arg>dbType</span>)</span>
+  </h3>
+  Write userCommand information into EventStore db. userCommand is a 
+  command with their option invoked by user.
+  <dl><dt></dt><dd>
+    <dl><dt><b>Parameters:</b></dt>
+      <dd><code><b>userCommand</b></code> -
+         command invoked by user
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=string)</i>
+      <dd><code><b>outputLog</b></code> -
+         open file descriptor
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=file descriptor)</i>
+      <dd><code><b>dbType</b></code> -
+         type of underlying DB, e.g. &quot;sqlite&quot; or 
+        &quot;mysql&quot;
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=string)</i>
+      </dd>
+    </dl>
+    <dl><dt><b>Returns:</b></dt>
+      <dd>
+        none
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=none)</i>
+      </dd>
+    </dl>
+  </dd></dl>
+</td></tr></table>
+
+<a name="ESOptions"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">ESOptions</span>(<span class=sig-arg>userCommand</span>,
+          <span class=sig-arg>optList</span>,
+          <span class=sig-arg>usage</span>=<span class=sig-default>''</span>,
+          <span class=sig-arg>usageDescription</span>=<span class=sig-default>''</span>,
+          <span class=sig-arg>examples</span>=<span class=sig-default>''</span>)</span>
+  </h3>
+  Analyse common options of EventStore toolkit: [ -help ] [ --help ] [ 
+  -examples ] [ -profile ] [ -verbose ] [ -historyfile &lt;filename&gt; ] 
+  [ -db &lt;name&#64;host:port:socket or fileName&gt; ] [ -user 
+  &lt;username&gt; -password &lt;password&gt; ] [ -logFile 
+  &lt;/path/filename or 'stdout' or 'stderr'&gt; ]
+  <dl><dt></dt><dd>
+    <dl><dt><b>Returns:</b></dt>
+      <dd>
+              <p>oList=[dbName,dbHost,userName,userPass,dbPort,dbSocket,histFile,logFile,logDir, 
+        verbose,profile,userCommand] dictOpt[option]=value
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=tuple (oList,dictOpt))</i>
+      </dd>
+    </dl>
+  </dd></dl>
+</td></tr></table>
+
+<a name="ESOutput"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">ESOutput</span>(<span class=sig-arg>status</span>,
+          <span class=sig-arg>userCommand</span>,
+          <span class=sig-arg>historyFile</span>,
+          <span class=sig-arg>outputLog</span>,
+          <span class=sig-arg>globalLog</span>)</span>
+  </h3>
+  Write out final information about job status to EventStore db 
+  log.
+  <dl><dt></dt><dd>
+    <dl><dt><b>Parameters:</b></dt>
+      <dd><code><b>status</b></code> -
+         status code of injection
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=integer)</i>
+      <dd><code><b>userCommand</b></code> -
+         command invoked by user
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=string)</i>
+      <dd><code><b>historyFile</b></code> -
+         file name
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=string)</i>
+      <dd><code><b>outputLog</b></code> -
+         open file descriptor
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=file descriptor)</i>
+      <dd><code><b>globalLog</b></code> -
+         open file descriptor
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=file descriptor)</i>
+      </dd>
+    </dl>
+    <dl><dt><b>Returns:</b></dt>
+      <dd>
+        status code
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=integer)</i>
+      </dd>
+    </dl>
+  </dd></dl>
+</td></tr></table>
+
+<a name="ESOutputLog"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">ESOutputLog</span>(<span class=sig-arg>logFile</span>)</span>
+  </h3>
+  Setup EventStore db log. It is either stdout, stderr or file 
+  based.
+  <dl><dt></dt><dd>
+    <dl><dt><b>Parameters:</b></dt>
+      <dd><code><b>logFile</b></code> -
+         name of the log file
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=string)</i>
+      </dd>
+    </dl>
+    <dl><dt><b>Returns:</b></dt>
+      <dd>
+        outputLog is a open file descriptor to the output log file 
+        globalLog is a open file descriptor for global EventStore log, 
+        e.g. multiple jobs can write to global log file and it's local 
+        own log file
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=tuple (outputLog,globalLog))</i>
+      </dd>
+    </dl>
+  </dd></dl>
+</td></tr></table>
+
+<a name="helpMsg"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">helpMsg</span>(<span class=sig-arg>tool</span>,
+          <span class=sig-arg>localOpt</span>)</span>
+  </h3>
+  Form usage message. Defines a list of common options for every tool 
+  used in EventStore toolkit. Among them '-help', '-esdb', etc.
+  <dl><dt></dt><dd>
+    <dl><dt><b>Parameters:</b></dt>
+      <dd><code><b>localOpt</b></code> -
+         list of options
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=list)</i>
+      </dd>
+    </dl>
+    <dl><dt><b>Returns:</b></dt>
+      <dd>
+        help message how to use toolkit
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=string)</i>
+      </dd>
+    </dl>
+  </dd></dl>
+</td></tr></table>
+
+<a name="requestDataFromDB"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">requestDataFromDB</span>(<span class=sig-arg>dbName</span>,
+          <span class=sig-arg>dbHost</span>,
+          <span class=sig-arg>port</span>,
+          <span class=sig-arg>socket</span>,
+          <span class=sig-arg>query</span>,
+          <span class=sig-arg>whatToRetrieve</span>=<span class=sig-default>'all'</span>,
+          <span class=sig-arg>verbose</span>=<span class=sig-default>1</span>)</span>
+  </h3>
+  Send query to specified DB. Return tuple for given query.
+  <dl><dt></dt><dd>
+    <dl><dt><b>Parameters:</b></dt>
+      <dd><code><b>dbName</b></code> -
+         name of underlying DB, e.g. EventStore
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=string)</i>
+      <dd><code><b>dbHost</b></code> -
+         hostname or file name for DB, e.g. lnx151 or sqlite.db
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=string)</i>
+      <dd><code><b>port</b></code> -
+         port number, e.g. 3306 is default for MySQL
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=integer)</i>
+      <dd><code><b>socket</b></code> -
+         file name of the socket
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=string)</i>
+      <dd><code><b>query</b></code> -
+         SQL query
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=string)</i>
+      <dd><code><b>whatToRetrieve</b></code> -
+         how to retrieve query, a single row or all matched rows
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=string)</i>
+      <dd><code><b>verbose</b></code> -
+         verbosity flag
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=integer (default is yes))</i>
+      </dd>
+    </dl>
+    <dl><dt><b>Returns:</b></dt>
+      <dd>
+        result's tuple associated with requested query
+        <br /><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (type=tuple)</i>
+      </dd>
+    </dl>
+  </dd></dl>
+</td></tr></table>
+<br />
+
+
+<!-- =========== START OF NAVBAR =========== -->
+<table class="navbar" border="0" width="100%" cellpadding="0" bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="center">
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="trees.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="indices.html">Index</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar" align="right" width="100%">
+      <table border="0" cellpadding="0" cellspacing="0">
+      <tr><th class="navbar" align="center">
+        <p class="nomargin">
+          EventStoreToolkit&nbsp;API
+      </p></th></tr></table>
+    </th>
+  </tr>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td align="left"><font size="-2">Generated by Epydoc 2.1 on Tue Jan 24 10:46:01 2006</font></td>
+    <td align="right"><a href="http://epydoc.sourceforge.net"
+                      ><font size="-2">http://epydoc.sf.net</font></a></td>
+  </tr>
+</table>
+</body>
+</html>

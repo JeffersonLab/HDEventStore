@@ -1,0 +1,5 @@
+[Global]
+user=gluex
+pass=gluex4ever
+host=localhost
+db=GluexMetaDB
