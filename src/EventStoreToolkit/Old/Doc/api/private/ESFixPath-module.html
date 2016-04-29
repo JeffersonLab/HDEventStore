@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>ESFixPath</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css"></link>
+</head>
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+
+<!-- =========== START OF NAVBAR =========== -->
+<table class="navbar" border="0" width="100%" cellpadding="0" bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="center">
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="trees.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="indices.html">Index</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar" align="right" width="100%">
+      <table border="0" cellpadding="0" cellspacing="0">
+      <tr><th class="navbar" align="center">
+        <p class="nomargin">
+          EventStoreToolkit&nbsp;API
+      </p></th></tr></table>
+    </th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <font size="-1"><b class="breadcrumbs">
+        Module&nbsp;ESFixPath
+      </b></font></br>
+    </td>
+    <td><table cellpadding="0" cellspacing="0">
+      <tr><td align="right"><font size="-2">[show&nbsp;private&nbsp;|&nbsp;<a href="../public/ESFixPath-module.html">hide&nbsp;private</a>]</font></td></tr>
+      <tr><td align="right"><font size="-2">[<a href="frames.html"target="_top">frames</a>&nbsp;|&nbsp;<a href="ESFixPath-module.html" target="_top">no&nbsp;frames</a>]</font></td></tr>
+    </table></td>
+</tr></table>
+
+<!-- =========== START OF MODULE DESCRIPTION =========== -->
+<h2 class="module">Module ESFixPath</h2>
+
+Collection of tools to fix arbitrary file paths wrt EventStore 
+specifications. Please consult 
+https://wiki.lepp.cornell.edu/CleoSWIG/bin/view/Main/EventStoreDesign web 
+page for further reading.
+<hr/>
+
+<!-- =========== START OF FUNCTION SUMMARY =========== -->
+<table class="summary" border="1" cellpadding="3" cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="summary">
+  <th colspan="2">Function Summary</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="ESFixPath-module.html#ESFixPath" class="summary-sig-name"><code>ESFixPath</code></a>(<span class=summary-sig-arg>args</span>)</span></code>
+<br />
+Fix paths in EventStoreDB.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="ESFixPath-module.html#formNewPath" class="summary-sig-name"><code>formNewPath</code></a>(<span class=summary-sig-arg>prefix</span>,
+          <span class=summary-sig-arg>run</span>,
+          <span class=summary-sig-arg>release</span>,
+          <span class=summary-sig-arg>svName</span>,
+          <span class=summary-sig-arg>parentList</span>,
+          <span class=summary-sig-arg>eventType</span>)</span></code>
+<br />
+Form a new path according to CLEOc data path specifications: 
+/cleo/{detector,simulated}/{event,calibration}/{daq,pass2_version}/123400/123456/{specific_version_path}</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="ESFixPath-module.html#getRelease" class="summary-sig-name"><code>getRelease</code></a>(<span class=summary-sig-arg>relList</span>,
+          <span class=summary-sig-arg>svName</span>)</span></code>
+<br />
+Lookup in release list and find out a match between release name and 
+svName.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="ESFixPath-module.html#newParentList" class="summary-sig-name"><code>newParentList</code></a>(<span class=summary-sig-arg>sql</span>,
+          <span class=summary-sig-arg>run</span>,
+          <span class=summary-sig-arg>parentList</span>)</span></code>
+<br />
+Check every parent if it holds given run</td></tr>
+</table><br />
+
+
+<!-- =========== START OF VARIABLE SUMMARY =========== -->
+<table class="summary" border="1" cellpadding="3" cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="summary">
+  <th colspan="2">Variable Summary</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1"><code>str</code></font></td>
+<td><b><a href="ESFixPath-module.html#RELPATH"><code>RELPATH</code></a></b> = <span title="'/nfs/solaris2/cleo3/Offline/rel'"><code><span class="variable-quote">'</span>/nfs/solaris2/cleo3/Offline/rel<span class="variable-quote">'</span>              </code>
+</span></td></tr>
+</table><br />
+
+
+<!-- =========== START OF FUNCTION DETAILS =========== -->
+<table class="details" border="1" cellpadding="3" cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="details">
+  <th colspan="2">Function Details</th></tr>
+</table>
+
+<a name="ESFixPath"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">ESFixPath</span>(<span class=sig-arg>args</span>)</span>
+  </h3>
+  Fix paths in EventStoreDB. The CLEOc data path specifications: 
+  /cleo/{detector,simulated}/{event,calibration}/{daq,pass2_version}/123400/123456/{specific_version_path}
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="formNewPath"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">formNewPath</span>(<span class=sig-arg>prefix</span>,
+          <span class=sig-arg>run</span>,
+          <span class=sig-arg>release</span>,
+          <span class=sig-arg>svName</span>,
+          <span class=sig-arg>parentList</span>,
+          <span class=sig-arg>eventType</span>=<span class=sig-default>'event'</span>)</span>
+  </h3>
+  Form a new path according to CLEOc data path specifications: 
+  /cleo/{detector,simulated}/{event,calibration}/{daq,pass2_version}/123400/123456/{specific_version_path}
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="getRelease"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">getRelease</span>(<span class=sig-arg>relList</span>,
+          <span class=sig-arg>svName</span>)</span>
+  </h3>
+  Lookup in release list and find out a match between release name and 
+  svName. Return empty string if no match found.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="newParentList"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">newParentList</span>(<span class=sig-arg>sql</span>,
+          <span class=sig-arg>run</span>,
+          <span class=sig-arg>parentList</span>)</span>
+  </h3>
+  Check every parent if it holds given run
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+<br />
+
+
+<!-- =========== START OF VARIABLE DETAILS =========== -->
+<table class="details" border="1" cellpadding="3" cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="details">
+  <th colspan="2">Variable Details</th></tr>
+</table>
+<table width="100%" class="var-details" bgcolor="#e0e0e0"><tr><td>
+<a name="RELPATH"></a>
+<h3>RELPATH</h3>
+<dl>
+  <dt></dt>
+  <dd>
+    <dl>
+      <dt><b>Type:</b></dt>
+      <dd>
+          <code>str</code>
+
+      </dd>
+<span title="'/nfs/solaris2/cleo3/Offline/rel'">      <dt><b>Value:</b></dt>
+      <dd><table><tr><td>
+<pre class="variable">
+<span class="variable-quote">'</span>/nfs/solaris2/cleo3/Offline/rel<span class="variable-quote">'</span>                                      </pre>
+        </td></tr></table></dd>
+</span>    </dl>
+  </dd>
+</dl></td></tr></table>
+<br />
+
+
+<!-- =========== START OF NAVBAR =========== -->
+<table class="navbar" border="0" width="100%" cellpadding="0" bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="center">
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="trees.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="indices.html">Index</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar" align="right" width="100%">
+      <table border="0" cellpadding="0" cellspacing="0">
+      <tr><th class="navbar" align="center">
+        <p class="nomargin">
+          EventStoreToolkit&nbsp;API
+      </p></th></tr></table>
+    </th>
+  </tr>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td align="left"><font size="-2">Generated by Epydoc 2.1 on Tue Jan 24 10:46:00 2006</font></td>
+    <td align="right"><a href="http://epydoc.sourceforge.net"
+                      ><font size="-2">http://epydoc.sf.net</font></a></td>
+  </tr>
+</table>
+</body>
+</html>

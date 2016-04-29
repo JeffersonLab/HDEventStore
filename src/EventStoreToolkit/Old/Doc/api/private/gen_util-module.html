@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>gen_util</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css"></link>
+</head>
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+
+<!-- =========== START OF NAVBAR =========== -->
+<table class="navbar" border="0" width="100%" cellpadding="0" bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="center">
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="trees.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="indices.html">Index</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar" align="right" width="100%">
+      <table border="0" cellpadding="0" cellspacing="0">
+      <tr><th class="navbar" align="center">
+        <p class="nomargin">
+          EventStoreToolkit&nbsp;API
+      </p></th></tr></table>
+    </th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <font size="-1"><b class="breadcrumbs">
+        Module&nbsp;gen_util
+      </b></font></br>
+    </td>
+    <td><table cellpadding="0" cellspacing="0">
+      <tr><td align="right"><font size="-2">[show&nbsp;private&nbsp;|&nbsp;<a href="../public/gen_util-module.html">hide&nbsp;private</a>]</font></td></tr>
+      <tr><td align="right"><font size="-2">[<a href="frames.html"target="_top">frames</a>&nbsp;|&nbsp;<a href="gen_util-module.html" target="_top">no&nbsp;frames</a>]</font></td></tr>
+    </table></td>
+</tr></table>
+
+<!-- =========== START OF MODULE DESCRIPTION =========== -->
+<h2 class="module">Module gen_util</h2>
+
+A set of usefull utilities independent from EventStore
+<hr/>
+
+<!-- =========== START OF FUNCTION SUMMARY =========== -->
+<table class="summary" border="1" cellpadding="3" cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="summary">
+  <th colspan="2">Function Summary</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="gen_util-module.html#addToDict" class="summary-sig-name"><code>addToDict</code></a>(<span class=summary-sig-arg>iDict</span>,
+          <span class=summary-sig-arg>key</span>,
+          <span class=summary-sig-arg>value</span>)</span></code>
+<br />
+Add value as a list to the dictionary for given key.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="gen_util-module.html#changeFileName" class="summary-sig-name"><code>changeFileName</code></a>(<span class=summary-sig-arg>fileName</span>,
+          <span class=summary-sig-arg>fromField</span>,
+          <span class=summary-sig-arg>toField</span>)</span></code>
+<br />
+Change portion of file name from 'fromField' to 'toField'.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="gen_util-module.html#dayAhead" class="summary-sig-name"><code>dayAhead</code></a>()</span></code>
+<br />
+Form a day ahead in the YYYYMMDD format.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="gen_util-module.html#form64BitNumber" class="summary-sig-name"><code>form64BitNumber</code></a>(<span class=summary-sig-arg>lower</span>,
+          <span class=summary-sig-arg>upper</span>)</span></code>
+<br />
+Form a 64-bit number from two 32-bit ones</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="gen_util-module.html#lowerUpperBitsOfUID" class="summary-sig-name"><code>lowerUpperBitsOfUID</code></a>(<span class=summary-sig-arg>uid</span>)</span></code>
+<br />
+Return lower and upper bits of 64-bit number</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="gen_util-module.html#printExcept" class="summary-sig-name"><code>printExcept</code></a>()</span></code>
+<br />
+print exception type, value and traceback on stderr</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="gen_util-module.html#printListElements" class="summary-sig-name"><code>printListElements</code></a>(<span class=summary-sig-arg>iList</span>,
+          <span class=summary-sig-arg>msg</span>)</span></code>
+<br />
+Loop over elements in a list and print one in a time on stdout</td></tr>
+</table><br />
+
+
+<!-- =========== START OF FUNCTION DETAILS =========== -->
+<table class="details" border="1" cellpadding="3" cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="details">
+  <th colspan="2">Function Details</th></tr>
+</table>
+
+<a name="addToDict"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">addToDict</span>(<span class=sig-arg>iDict</span>,
+          <span class=sig-arg>key</span>,
+          <span class=sig-arg>value</span>)</span>
+  </h3>
+  Add value as a list to the dictionary for given key. If dictionary 
+  contains such key, update its list with given value. Return dictionary 
+  itself.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="changeFileName"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">changeFileName</span>(<span class=sig-arg>fileName</span>,
+          <span class=sig-arg>fromField</span>,
+          <span class=sig-arg>toField</span>)</span>
+  </h3>
+  Change portion of file name from 'fromField' to 'toField'. It uses 
+  string replace mechnism to make a change. Return original name if no 
+  'fromField' and 'toField' provided.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="dayAhead"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">dayAhead</span>()</span>
+  </h3>
+  <p>Form a day ahead in the YYYYMMDD format. To form such day we ask for 
+  seconds since epoch time.time(), add one day 60*60*24, convert to tuple 
+  in UTC format and send it for formating to time.strftime:</p>
+  int( time.strftime( 
+  &quot;%Y%m%d&quot;,time.gmtime(time.time()+60*60*24) ) )
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="form64BitNumber"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">form64BitNumber</span>(<span class=sig-arg>lower</span>,
+          <span class=sig-arg>upper</span>)</span>
+  </h3>
+  Form a 64-bit number from two 32-bit ones
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="lowerUpperBitsOfUID"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">lowerUpperBitsOfUID</span>(<span class=sig-arg>uid</span>)</span>
+  </h3>
+  Return lower and upper bits of 64-bit number
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="printExcept"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">printExcept</span>()</span>
+  </h3>
+  print exception type, value and traceback on stderr
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="printListElements"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">printListElements</span>(<span class=sig-arg>iList</span>,
+          <span class=sig-arg>msg</span>=<span class=sig-default>''</span>)</span>
+  </h3>
+  Loop over elements in a list and print one in a time on stdout
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+<br />
+
+
+<!-- =========== START OF NAVBAR =========== -->
+<table class="navbar" border="0" width="100%" cellpadding="0" bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="center">
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="trees.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="indices.html">Index</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar" align="right" width="100%">
+      <table border="0" cellpadding="0" cellspacing="0">
+      <tr><th class="navbar" align="center">
+        <p class="nomargin">
+          EventStoreToolkit&nbsp;API
+      </p></th></tr></table>
+    </th>
+  </tr>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td align="left"><font size="-2">Generated by Epydoc 2.1 on Tue Jan 24 10:46:01 2006</font></td>
+    <td align="right"><a href="http://epydoc.sourceforge.net"
+                      ><font size="-2">http://epydoc.sf.net</font></a></td>
+  </tr>
+</table>
+</body>
+</html>

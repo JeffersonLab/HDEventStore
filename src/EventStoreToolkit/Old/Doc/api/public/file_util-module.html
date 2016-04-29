@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>file_util</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css"></link>
+</head>
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+
+<!-- =========== START OF NAVBAR =========== -->
+<table class="navbar" border="0" width="100%" cellpadding="0" bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="center">
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="trees.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="indices.html">Index</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar" align="right" width="100%">
+      <table border="0" cellpadding="0" cellspacing="0">
+      <tr><th class="navbar" align="center">
+        <p class="nomargin">
+          EventStoreToolkit&nbsp;API
+      </p></th></tr></table>
+    </th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <font size="-1"><b class="breadcrumbs">
+        Module&nbsp;file_util
+      </b></font></br>
+    </td>
+    <td><table cellpadding="0" cellspacing="0">
+      <tr><td align="right"><font size="-2">[<a href="../private/file_util-module.html">show&nbsp;private</a>&nbsp;|&nbsp;hide&nbsp;private]</font></td></tr>
+      <tr><td align="right"><font size="-2">[<a href="frames.html"target="_top">frames</a>&nbsp;|&nbsp;<a href="file_util-module.html" target="_top">no&nbsp;frames</a>]</font></td></tr>
+    </table></td>
+</tr></table>
+
+<!-- =========== START OF MODULE DESCRIPTION =========== -->
+<h2 class="module">Module file_util</h2>
+
+Set of high-level functions to build key/location files regardless 
+from input data format. All EventStore file types are determined by 
+fileType method.
+<hr/>
+
+<!-- =========== START OF FUNCTION SUMMARY =========== -->
+<table class="summary" border="1" cellpadding="3" cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="summary">
+  <th colspan="2">Function Summary</th></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="file_util-module.html#build_key" class="summary-sig-name"><code>build_key</code></a>(<span class=summary-sig-arg>fileIn</span>,
+          <span class=summary-sig-arg>fileOut</span>,
+          <span class=summary-sig-arg>oFileID</span>)</span></code>
+<br />
+A high-level method to build key files in EventStore</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="file_util-module.html#build_location" class="summary-sig-name"><code>build_location</code></a>(<span class=summary-sig-arg>fileIn</span>,
+          <span class=summary-sig-arg>fileID</span>,
+          <span class=summary-sig-arg>fileOut</span>,
+          <span class=summary-sig-arg>allList</span>)</span></code>
+<br />
+A high-level method to build location files in EventStore</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="file_util-module.html#changeFileIdsInLocFile" class="summary-sig-name"><code>changeFileIdsInLocFile</code></a>(<span class=summary-sig-arg>locFileName</span>,
+          <span class=summary-sig-arg>fileIdList</span>)</span></code>
+<br />
+A high-level method to change fileIds in location file to given 
+list</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="file_util-module.html#fileParser" class="summary-sig-name"><code>fileParser</code></a>(<span class=summary-sig-arg>fileName</span>,
+          <span class=summary-sig-arg>what</span>)</span></code>
+<br />
+A high-level method to parse data files in EventStore.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="file_util-module.html#fileType" class="summary-sig-name"><code>fileType</code></a>(<span class=summary-sig-arg>fileName</span>)</span></code>
+<br />
+A high-level method to determine file type.</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="file_util-module.html#getFileIds" class="summary-sig-name"><code>getFileIds</code></a>(<span class=summary-sig-arg>locFileName</span>)</span></code>
+<br />
+A high-level method to get a list of fileIds from location file</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="file_util-module.html#getProxies" class="summary-sig-name"><code>getProxies</code></a>(<span class=summary-sig-arg>fileName</span>)</span></code>
+<br />
+A high-level method to get data (proxies) from given file</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="file_util-module.html#locationFileParser" class="summary-sig-name"><code>locationFileParser</code></a>(<span class=summary-sig-arg>fileName</span>)</span></code>
+<br />
+A high-level method to parse location files in EventStore</td></tr>
+<tr><td align="right" valign="top" width="15%"><font size="-1">&nbsp;</font></td>
+  <td><code><span class="summary-sig"><a href="file_util-module.html#runParser" class="summary-sig-name"><code>runParser</code></a>(<span class=summary-sig-arg>fileName</span>)</span></code>
+<br />
+A high-level method to parse files in EventStore and return run 
+content.</td></tr>
+</table><br />
+
+
+<!-- =========== START OF FUNCTION DETAILS =========== -->
+<table class="details" border="1" cellpadding="3" cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="details">
+  <th colspan="2">Function Details</th></tr>
+</table>
+
+<a name="build_key"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">build_key</span>(<span class=sig-arg>fileIn</span>,
+          <span class=sig-arg>fileOut</span>,
+          <span class=sig-arg>oFileID</span>)</span>
+  </h3>
+  A high-level method to build key files in EventStore
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="build_location"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">build_location</span>(<span class=sig-arg>fileIn</span>,
+          <span class=sig-arg>fileID</span>,
+          <span class=sig-arg>fileOut</span>,
+          <span class=sig-arg>allList</span>=<span class=sig-default>[]</span>)</span>
+  </h3>
+  A high-level method to build location files in EventStore
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="changeFileIdsInLocFile"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">changeFileIdsInLocFile</span>(<span class=sig-arg>locFileName</span>,
+          <span class=sig-arg>fileIdList</span>)</span>
+  </h3>
+  A high-level method to change fileIds in location file to given 
+  list
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="fileParser"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">fileParser</span>(<span class=sig-arg>fileName</span>,
+          <span class=sig-arg>what</span>=<span class=sig-default>''</span>)</span>
+  </h3>
+  A high-level method to parse data files in EventStore. Based on a 
+  file type it propagates a request to appropriate module.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="fileType"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">fileType</span>(<span class=sig-arg>fileName</span>)</span>
+  </h3>
+  A high-level method to determine file type. It uses file 
+  signature:
+  <ul>
+    <li>
+      PDSSIGNATURE=3141592
+    </li>
+    <li>
+      KEYSIGNATURE=2718281
+    </li>
+    <li>
+      LOCSIGNATURE=2951413,
+    </li>
+    <li>
+      BINARYSIGNATURE=&quot;RAW&quot;
+    </li>
+    <li>
+      LOCBINARYSIGNATURE=&quot;RAWL&quot;
+    </li>
+    <li>
+      SWAPPEDBINARYSIGNATURE=&quot;WAR&quot;,
+    </li>
+    <li>
+      SWAPPEDLOCBINARYSIGNATURE=&quot;LWAR&quot;.
+    </li>
+  </ul>
+  It is endian complaint.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="getFileIds"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">getFileIds</span>(<span class=sig-arg>locFileName</span>)</span>
+  </h3>
+  A high-level method to get a list of fileIds from location file
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="getProxies"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">getProxies</span>(<span class=sig-arg>fileName</span>)</span>
+  </h3>
+  A high-level method to get data (proxies) from given file
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="locationFileParser"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">locationFileParser</span>(<span class=sig-arg>fileName</span>)</span>
+  </h3>
+  A high-level method to parse location files in EventStore
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+
+<a name="runParser"></a>
+<table width="100%" class="func-details" bgcolor="#e0e0e0"><tr><td>
+  <h3><span class="sig"><span class="sig-name">runParser</span>(<span class=sig-arg>fileName</span>)</span>
+  </h3>
+  A high-level method to parse files in EventStore and return run 
+  content.
+  <dl><dt></dt><dd>
+  </dd></dl>
+</td></tr></table>
+<br />
+
+
+<!-- =========== START OF NAVBAR =========== -->
+<table class="navbar" border="0" width="100%" cellpadding="0" bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="center">
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="trees.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="indices.html">Index</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar">&nbsp;&nbsp;&nbsp;<a class="navbar" href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+    <th class="navbar" align="right" width="100%">
+      <table border="0" cellpadding="0" cellspacing="0">
+      <tr><th class="navbar" align="center">
+        <p class="nomargin">
+          EventStoreToolkit&nbsp;API
+      </p></th></tr></table>
+    </th>
+  </tr>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td align="left"><font size="-2">Generated by Epydoc 2.1 on Tue Jan 24 10:46:01 2006</font></td>
+    <td align="right"><a href="http://epydoc.sourceforge.net"
+                      ><font size="-2">http://epydoc.sf.net</font></a></td>
+  </tr>
+</table>
+</body>
+</html>

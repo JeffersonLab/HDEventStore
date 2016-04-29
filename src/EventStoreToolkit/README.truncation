@@ -1,0 +1,51 @@
+20050914
+I discussed with Chris a procedure how to deal with truncated runs.
+
+Case 1) If run was not advertised in ESDB we will follow ESFixTruncatedRun
+which create a new view 'truncated' and swap 'all' view to 'all-problem' and
+'truncated' to 'all'.
+
+Case 2) If run was advertised in ESDB and then decided to be truncated.
+In this case we need to create a new graphid following the steps:
+- Run ESVesionManager -badRunList bad.list -time <newTimeStamp>
+  where bad.list contains a list of runs which need to be truncated
+- MANUALLY:
+  - create new dataVersionName and svid
+  - create new graphid<->svid in GraphPath (e.g. graphid=gid2)
+  - create new graphid->NULL in PathDepend
+  - create new entry in Version table
+  - copy in Location table
+    gid1 run uid locId1
+    gid2 run uid locId1
+  - copy in KeyFile table
+    gid1 all run uid keyFileId1
+    gid2 all run uid keyFileId1
+- run ESFixTruncatedRun <idxaFile> EventStore daq
+  which will go and find out recent timeStamp for daq grade and create a new view
+  'truncated' and swap 'all' view to 'all-problem' and 'truncated' to 'all'.
+
+Doing all this steps I'll have the following layout in ESDB:
+
+Version table
+-------------
+
+daq time1 run01 runNN gid1
+daq time2 run01 run11 gid1
+daq time2 run12 run12 gid2
+daq rime2 run13 runNN gid1
+
+KeyFile table
+-------------
+
+gid1 all run12 uid keyFileId1
+gid2 all run12 uid keyFileId2
+gid2 all-problem run12 uid keyFileId1
+
+Location table
+--------------
+
+gid1 run12 locationId1
+gid2 run12 locationId1
+
+
+

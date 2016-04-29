@@ -1,0 +1,48 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <META NAME="GENERATOR" CONTENT="SGML-Tools 1.0.9">
+ <TITLE>MySQLdb FAQ: Trouble with ZMySQLDA</TITLE>
+ <LINK HREF="MySQLdb-FAQ-3.html" REL=next>
+ <LINK HREF="MySQLdb-FAQ-1.html" REL=previous>
+ <LINK HREF="MySQLdb-FAQ.html#toc2" REL=contents>
+</HEAD>
+<BODY>
+<A HREF="MySQLdb-FAQ-3.html">Next</A>
+<A HREF="MySQLdb-FAQ-1.html">Previous</A>
+<A HREF="MySQLdb-FAQ.html#toc2">Contents</A>
+<HR>
+<H2><A NAME="s2">2. Trouble with ZMySQLDA</A></H2>
+
+<H2><A NAME="ss2.1">2.1 I installed MySQLdb but ZMySQLDA can't find it.</A>
+</H2>
+
+<P>Probably you installed a binary version of Zope which comes with
+it's own Python interpreter. You will have to compile MySQLdb against
+that particular Python installation. Find out where it's python binary
+lives and use that to run setup.py.
+<H2><A NAME="ss2.2">2.2 I'm getting these stupid L's on my INTEGER columns.</A>
+</H2>
+
+<P>Yup, they have to be converted to long integers to avoid overflows
+on UNSIGNED INT columns. Solutions: Use a <CODE>fmt=%d</CODE> attribute on your
+<CODE>dtml-var</CODE> elements; Wait for Zope 2.4 which comes with Python 2.1
+which doesn't add the L.
+<H2><A NAME="ss2.3">2.3 I get SQL syntax errors on a LIMIT clause, and I didn't put in</A>
+a LIMIT clause! </H2>
+
+<P>Z SQL Methods have a <CODE>max_rows</CODE> parameter. If this is set to a
+non-zero value, ZMySQLDA adds a LIMIT clause to SELECT statements to
+enforce this. This is a big performance gain, particularly if the
+result set could be big. If it is interfering with something, set
+<CODE>max_rows</CODE> to zero, and it won't add a LIMIT clause. In particular,
+you will probably have to do this when inserting rows with
+AUTO_INCREMENT columns, because typically you use SELECT thereafter to
+get LAST_INSERT_ID(), and LIMIT can mess this up.
+<P>
+<HR>
+<A HREF="MySQLdb-FAQ-3.html">Next</A>
+<A HREF="MySQLdb-FAQ-1.html">Previous</A>
+<A HREF="MySQLdb-FAQ.html#toc2">Contents</A>
+</BODY>
+</HTML>

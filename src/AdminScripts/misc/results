@@ -1,0 +1,31 @@
+
+Failed injection for run 1049
+
+Job output = /home/gxproj3/.farm_out/ES_inject_1049.11658216.out
+EventStore dir = /work/halld/EventStore/RunPeriod-2014-10/ver10/rest_index/001049
+total 3.0K
+drwxr-sr-x 2 gxproj3 halld-1 2 Feb 12 18:23 logs
+
+Log file = /work/halld/EventStore/RunPeriod-2014-10/ver10/rest_index/001049/logs/run1049_sqlite.log
+Data files:
+ls: cannot access /work/halld/data_monitoring/RunPeriod-2014-10/ver10/REST/001049/dana_rest_001049_*.hddm: No such file or directory
+
+Failed injection for run 1109
+
+Job output = /home/gxproj3/.farm_out/ES_inject_1109.11658288.out
+EventStore dir = /work/halld/EventStore/RunPeriod-2014-10/ver10/rest_index/001109
+ls: cannot access /work/halld/EventStore/RunPeriod-2014-10/ver10/rest_index/001109: No such file or directory
+
+Log file = /work/halld/EventStore/RunPeriod-2014-10/ver10/rest_index/001109/logs/run1109_sqlite.log
+Data files:
+-rw-r--r-- 1 gluex halld-1 4.8K Feb 11 14:00 /work/halld/data_monitoring/RunPeriod-2014-10/ver10/REST/001109/dana_rest_001109_000.hddm
+
+Failed injection for run 1110
+
+Job output = /home/gxproj3/.farm_out/ES_inject_1110.11658289.out
+EventStore dir = /work/halld/EventStore/RunPeriod-2014-10/ver10/rest_index/001110
+total 3.0K
+drwxr-sr-x 2 gxproj3 halld-1 4 Feb 12 18:37 logs
+
+Log file = /work/halld/EventStore/RunPeriod-2014-10/ver10/rest_index/001110/logs/run1110_sqlite.log
+Data files:
